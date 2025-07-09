@@ -13,7 +13,6 @@ import {
   Search,
   Eye,
   ArrowRight,
-  ArrowUp
   X,
   ArrowUp
 } from 'lucide-react';
@@ -24,10 +23,6 @@ const Resources = () => {
   const [activeTab, setActiveTab] = useState<'blog' | 'newsletters' | 'links' | 'videos'>('blog');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -62,16 +57,6 @@ const Resources = () => {
         (item.tags && item.tags.some((tag: string) => tag.toLowerCase().includes(searchTerm.toLowerCase())));
       return matchesCategory && matchesSearch;
     });
-  };
-
-  const openVideoExternal = (video: any) => {
-    // Convert embed URL to watch URL
-    let watchUrl = video.videoUrl;
-    if (watchUrl.includes('/embed/')) {
-      const videoId = watchUrl.split('/embed/')[1].split('?')[0];
-      watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
-    }
-    window.open(watchUrl, '_blank', 'noopener,noreferrer');
   };
 
   const openVideoExternal = (video: any) => {
@@ -255,10 +240,6 @@ const Resources = () => {
             className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
             onClick={() => openVideoExternal(video)}
           >
-            key={video.id} 
-            className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
-            onClick={() => openVideoExternal(video)}
-          >
             <div className="relative aspect-video overflow-hidden">
               <img
                 src={video.thumbnailUrl}
@@ -268,7 +249,6 @@ const Resources = () => {
               <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="bg-white bg-opacity-90 rounded-full p-4 flex items-center space-x-2">
                   <Play className="h-6 w-6 text-blue-600" />
-                  <ExternalLink className="h-5 w-5 text-blue-600" />
                   <ExternalLink className="h-5 w-5 text-blue-600" />
                 </div>
               </div>
@@ -300,9 +280,6 @@ const Resources = () => {
                 <span className="mx-2">•</span>
                 <ExternalLink className="h-4 w-4 mr-1" />
                 Opens in YouTube
-                <span className="mx-2">•</span>
-                <ExternalLink className="h-4 w-4 mr-1" />
-                Opens in YouTube
               </div>
               <div className="flex flex-wrap gap-2">
                 {video.tags.slice(0, 3).map((tag) => (
@@ -320,17 +297,6 @@ const Resources = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50 py-16">
-      {/* Sticky Back to Top Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <button
-          onClick={scrollToTop}
-          className="bg-gray-600 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
-          title="Back to Top"
-        >
-          <ArrowUp className="h-6 w-6 group-hover:-translate-y-1 transition-transform" />
-        </button>
-      </div>
-
       {/* Sticky Back to Top Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <button

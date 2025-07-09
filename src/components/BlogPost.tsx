@@ -12,10 +12,6 @@ const BlogPost = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   if (!post) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -44,27 +40,6 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50">
-      {/* Sticky Navigation Buttons */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-        {/* Back to Resources Button */}
-        <Link
-          to="/resources"
-          className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
-          title="Back to Resources"
-        >
-          <ArrowLeft className="h-6 w-6 group-hover:-translate-x-1 transition-transform" />
-        </Link>
-        
-        {/* Back to Top Button */}
-        <button
-          onClick={scrollToTop}
-          className="bg-gray-600 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
-          title="Back to Top"
-        >
-          <ArrowUp className="h-6 w-6 group-hover:-translate-y-1 transition-transform" />
-        </button>
-      </div>
-
       {/* Sticky Navigation Buttons */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
         {/* Back to Resources Button */}
