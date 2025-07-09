@@ -77,12 +77,16 @@ const WhatWeDo = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+            <TrendingUp className="h-4 w-4 mr-2" />
+            Our Core Transformation Areas
+          </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             What We Do
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We specialize in three core transformation areas that leverage SAP's latest innovations 
-            from Sapphire 2024 to drive your business forward.
+            We help enterprises transform through three interconnected areas, each powered by specific SAP solutions 
+            that work together to create a comprehensive digital transformation strategy.
           </p>
         </div>
 
@@ -139,10 +143,13 @@ const WhatWeDo = () => {
               </div>
 
               {/* CTA Button */}
-              <button className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-200 flex items-center justify-center ${getButtonColor(area.gradient)}`}>
+              <a 
+                href="#services"
+                className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-200 flex items-center justify-center ${getButtonColor(area.gradient)}`}
+              >
                 Learn More
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </button>
+              </a>
             </div>
           ))}
         </div>

@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import WhatWeDo from './components/WhatWeDo';
-import AIAgents from './components/AIAgents';
 import Services from './components/Services';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -23,8 +22,6 @@ function App() {
           <>
             <Hero />
             <WhatWeDo />
-            <WhatWeDo />
-            <AIAgents />
             <Services />
             <About />
             <Contact />
