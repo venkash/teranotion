@@ -54,19 +54,19 @@ const Hero = () => {
   const currentOffering = offerings[currentOfferingIndex];
 
   return (
-    <section id="home" className="bg-gradient-to-br from-slate-50 via-white to-blue-50 pt-16 pb-20 overflow-hidden">
+    <section id="home" className="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 pt-16 pb-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <div className="relative">
             {/* Animated background elements */}
-            <div className="absolute -top-4 -left-4 w-72 h-72 bg-slate-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse"></div>
-            <div className="absolute -bottom-8 -right-4 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse delay-1000"></div>
+            <div className="absolute -top-4 -left-4 w-72 h-72 bg-emerald-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse"></div>
+            <div className="absolute -bottom-8 -right-4 w-72 h-72 bg-teal-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse delay-1000"></div>
             
             <div className="relative z-10">
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
                 <span className="text-2xl md:text-3xl">Transform Your Enterprise with</span>
-                <span className="text-blue-700 block mt-2 text-4xl md:text-5xl">SAP Business Data Cloud & AI Solutions</span>
+                <span className="text-emerald-700 block mt-2 text-4xl md:text-5xl">SAP Business Data Cloud & AI Solutions</span>
               </h1>
               
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
@@ -78,14 +78,14 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <a
                   href="#contact"
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 font-medium flex items-center justify-center group shadow-lg hover:shadow-xl"
+                  className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg hover:from-emerald-700 hover:to-teal-700 transition-all duration-200 font-medium flex items-center justify-center group shadow-lg hover:shadow-xl"
                 >
                   Start Your Transformation
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
                   href="#what-we-do"
-                  className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-200 font-medium text-center shadow-sm hover:shadow-lg"
+                  className="border-2 border-emerald-600 text-emerald-600 px-8 py-4 rounded-lg hover:bg-emerald-600 hover:text-white transition-all duration-200 font-medium text-center shadow-sm hover:shadow-lg"
                 >
                   Explore Solutions
                 </a>
@@ -94,15 +94,15 @@ const Hero = () => {
               {/* Trust Indicators */}
               <div className="grid grid-cols-3 gap-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-700 mb-1">18+</div>
+                  <div className="text-3xl font-bold text-emerald-700 mb-1">18+</div>
                   <div className="text-sm text-gray-600">Years SAP Expertise</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-700 mb-1">BTP</div>
+                  <div className="text-3xl font-bold text-emerald-700 mb-1">BTP</div>
                   <div className="text-sm text-gray-600">Platform Certified</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-700 mb-1">AI</div>
+                  <div className="text-3xl font-bold text-emerald-700 mb-1">AI</div>
                   <div className="text-sm text-gray-600">Ready Solutions</div>
                 </div>
               </div>
@@ -114,7 +114,7 @@ const Hero = () => {
             {/* Main Container */}
             <div className="bg-white rounded-2xl shadow-2xl p-8 backdrop-blur-sm bg-opacity-90">
               <div className="text-center mb-8">
-                <div className="inline-flex items-center px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm font-medium mb-4">
+                <div className="inline-flex items-center px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-4">
                   <Sparkles className="h-4 w-4 mr-2" />
                   Our Core Offerings
                 </div>
@@ -129,14 +129,14 @@ const Hero = () => {
                 >
                   <div
                     key={currentOfferingIndex}
-                    className="relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-50 to-blue-100 p-8 hover:shadow-lg transition-all duration-500 cursor-pointer animate-fadeInScale"
+                    className="relative overflow-hidden rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 p-8 hover:shadow-lg transition-all duration-500 cursor-pointer animate-fadeInScale"
                   >
                     {/* Animated background gradient */}
-                    <div className={`absolute inset-0 bg-gradient-to-r ${currentOffering.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
                     
                     <div className="relative text-center">
                       {/* Icon with animation */}
-                      <div className={`w-16 h-16 mx-auto mb-4 rounded-lg bg-gradient-to-r ${currentOffering.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                      <div className={`w-16 h-16 mx-auto mb-4 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                         <currentOffering.icon className="h-8 w-8 text-white" />
                       </div>
                       
@@ -150,7 +150,7 @@ const Hero = () => {
                         </p>
                         
                         {/* Learn More Button */}
-                        <div className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200">
+                        <div className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium transition-colors duration-200">
                           Learn More
                           <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                         </div>
@@ -158,7 +158,7 @@ const Hero = () => {
                     </div>
                     
                     {/* Animated border */}
-                    <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-600 w-0 group-hover:w-full transition-all duration-500"></div>
+                    <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 w-0 group-hover:w-full transition-all duration-500"></div>
                   </div>
                 </Link>
               </div>
@@ -171,7 +171,7 @@ const Hero = () => {
                     onClick={() => setCurrentOfferingIndex(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       index === currentOfferingIndex 
-                        ? 'bg-blue-600 scale-125' 
+                        ? 'bg-emerald-600 scale-125' 
                         : 'bg-gray-300 hover:bg-gray-400'
                     }`}
                   />
@@ -182,7 +182,7 @@ const Hero = () => {
               <div className="mt-8 pt-6 border-t border-gray-200 text-center">
                 <a
                   href="#services"
-                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
+                  className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium transition-colors duration-200"
                 >
                   View All Solutions
                   <Zap className="ml-2 h-4 w-4" />
@@ -191,8 +191,8 @@ const Hero = () => {
             </div>
 
             {/* Floating elements */}
-            <div className="absolute -top-6 -right-6 w-12 h-12 bg-blue-400 rounded-full opacity-20 animate-bounce"></div>
-            <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-blue-400 rounded-full opacity-30 animate-bounce delay-500"></div>
+            <div className="absolute -top-6 -right-6 w-12 h-12 bg-emerald-400 rounded-full opacity-20 animate-bounce"></div>
+            <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-teal-400 rounded-full opacity-30 animate-bounce delay-500"></div>
           </div>
         </div>
       </div>
