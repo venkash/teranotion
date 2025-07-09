@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import WhatWeDo from './components/WhatWeDo';
 import SAPBusinessDataCloud from './components/SAPBusinessDataCloud';
 import AIAgents from './components/AIAgents';
+import WhatWeDo from './components/WhatWeDo';
 import Services from './components/Services';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={
           <>
             <Hero />
+            <WhatWeDo />
             <WhatWeDo />
             <SAPBusinessDataCloud />
             <AIAgents />

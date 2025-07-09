@@ -1,148 +1,176 @@
 import React from 'react';
-import { Database, Bot, BarChart3, Workflow, CheckCircle, ArrowRight } from 'lucide-react';
+import { TrendingUp, Database, Brain, Workflow, CheckCircle, ArrowRight } from 'lucide-react';
 
 const WhatWeDo = () => {
-  const conceptualServices = [
+  const transformationAreas = [
     {
-      icon: BarChart3,
+      id: 'data-analytics-modernization',
+      icon: Database,
       title: 'Data & Analytics Modernization',
-      description: 'Transform traditional reporting into intelligent, predictive insights using SAP\'s latest data fabric and analytics technologies',
-      approach: 'Using SAP Business Data Cloud and SAP Analytics Cloud',
-      color: 'blue'
+      description: 'Transform your data landscape with cloud-native analytics and real-time insights using SAP Business Data Cloud and SAP Analytics Cloud.',
+      keyCapabilities: [
+        'Real-time data streaming & processing',
+        'Unified data fabric architecture',
+        'Self-service analytics for business users',
+        'AI-powered insights and recommendations'
+      ],
+      tools: ['SAP Business Data Cloud', 'SAP Analytics Cloud', 'SAP HANA Cloud'],
+      color: 'blue',
+      gradient: 'from-blue-500 to-blue-600'
     },
     {
+      id: 'digital-transformation',
       icon: Workflow,
       title: 'End-to-End Digital Transformation',
-      description: 'Architecture, integration, governance, and cloud optimization tailored for your business goals with comprehensive change management',
-      approach: 'Leveraging SAP Build Platform and Integration Suite',
-      color: 'indigo'
+      description: 'Accelerate your digital journey with low-code platforms and seamless integration across your entire business ecosystem.',
+      keyCapabilities: [
+        'Low-code/no-code application development',
+        'Seamless system integration',
+        'Process automation and optimization',
+        'Citizen developer enablement'
+      ],
+      tools: ['SAP Build Platform', 'SAP Integration Suite', 'SAP Process Automation'],
+      color: 'green',
+      gradient: 'from-green-500 to-green-600'
     },
     {
-      icon: Bot,
-      title: 'AI Foundation & Readiness',
-      description: 'Set up your enterprise to be AI-ready with intelligent agents, ML platforms, and automated decision-making capabilities',
-      approach: 'Built on SAP AI Core and Joule Framework',
-      color: 'teal'
+      id: 'ai-foundation',
+      icon: Brain,
+      title: 'AI Foundation & Enterprise Readiness',
+      description: 'Build a robust AI foundation with SAP AI Core and Joule Framework to make your enterprise truly AI-ready for the future.',
+      keyCapabilities: [
+        'Enterprise AI model management',
+        'Intelligent automation agents',
+        'Machine learning operations (MLOps)',
+        'Conversational AI and natural language processing'
+      ],
+      tools: ['SAP AI Core', 'Joule Framework', 'SAP AI Business Services'],
+      color: 'purple',
+      gradient: 'from-purple-500 to-purple-600'
     }
   ];
 
   const getColorClasses = (color: string) => {
     const colors = {
-      blue: 'from-blue-500 to-blue-600',
-      indigo: 'from-indigo-500 to-indigo-600',
-      teal: 'from-teal-500 to-teal-600'
+      blue: 'bg-blue-50 border-blue-200 hover:border-blue-300',
+      green: 'bg-green-50 border-green-200 hover:border-green-300',
+      purple: 'bg-purple-50 border-purple-200 hover:border-purple-300'
     };
-    return colors[color as keyof typeof colors];
+    return colors[color as keyof typeof colors] || colors.blue;
+  };
+
+  const getIconColor = (color: string) => {
+    const colors = {
+      blue: 'text-blue-600',
+      green: 'text-green-600',
+      purple: 'text-purple-600'
+    };
+    return colors[color as keyof typeof colors] || colors.blue;
+  };
+
+  const getButtonColor = (gradient: string) => {
+    return `bg-gradient-to-r ${gradient} text-white hover:shadow-lg`;
   };
 
   return (
-    <section id="what-we-do" className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             What We Do
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            At Teranotion, we help enterprises modernize their data and analytics platforms 
-            using the latest in SAP technology. Our approach focuses on three core transformation areas 
-            that drive intelligent business outcomes.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            We specialize in three core transformation areas that leverage SAP's latest innovations 
+            from Sapphire 2024 to drive your business forward.
           </p>
         </div>
 
-        {/* Conceptual Services */}
+        {/* Transformation Areas */}
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
-          {conceptualServices.map((service, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
-              {/* Header */}
-              <div className={`bg-gradient-to-r ${getColorClasses(service.color)} p-6 text-white`}>
-                <div className="flex items-center justify-center mb-4">
-                  <div className="bg-white bg-opacity-20 p-4 rounded-full">
-                    <service.icon className="h-8 w-8" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-center">{service.title}</h3>
+          {transformationAreas.map((area, index) => (
+            <div
+              key={area.id}
+              className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 ${getColorClasses(area.color)} p-8`}
+            >
+              {/* Icon */}
+              <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${area.gradient} flex items-center justify-center mb-6`}>
+                <area.icon className="h-8 w-8 text-white" />
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {service.description}
-                </p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                {area.title}
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                {area.description}
+              </p>
 
-                <div className="bg-gray-50 rounded-lg p-4 mb-6">
-                  <div className="text-sm font-medium text-gray-700 mb-1">Our Approach:</div>
-                  <div className="text-sm text-gray-600">{service.approach}</div>
-                </div>
+              {/* Key Capabilities */}
+              <div className="mb-6">
+                <h4 className="font-semibold text-gray-900 mb-3">Key Capabilities:</h4>
+                <ul className="space-y-2">
+                  {area.keyCapabilities.map((capability, capIndex) => (
+                    <li key={capIndex} className="flex items-start">
+                      <CheckCircle className={`h-5 w-5 mr-2 mt-0.5 flex-shrink-0 ${getIconColor(area.color)}`} />
+                      <span className="text-gray-700 text-sm">{capability}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-                {/* Learn More */}
-                <div className="text-center">
-                  <a
-                    href="#services"
-                    className={`inline-flex items-center text-${service.color === 'blue' ? 'blue' : service.color === 'indigo' ? 'indigo' : 'teal'}-600 font-medium hover:translate-x-1 transition-transform`}
-                  >
-                    See Our Solutions
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
+              {/* Tools */}
+              <div className="mb-6">
+                <h4 className="font-semibold text-gray-900 mb-3">Core Tools:</h4>
+                <div className="flex flex-wrap gap-2">
+                  {area.tools.map((tool, toolIndex) => (
+                    <span
+                      key={toolIndex}
+                      className={`px-3 py-1 rounded-full text-xs font-medium ${
+                        area.color === 'blue' ? 'bg-blue-100 text-blue-800' :
+                        area.color === 'green' ? 'bg-green-100 text-green-800' :
+                        'bg-purple-100 text-purple-800'
+                      }`}
+                    >
+                      {tool}
+                    </span>
+                  ))}
                 </div>
               </div>
+
+              {/* CTA Button */}
+              <button className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-200 flex items-center justify-center ${getButtonColor(area.gradient)}`}>
+                Learn More
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </button>
             </div>
           ))}
         </div>
 
-        {/* Value Proposition */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Why Choose Teranotion?
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 p-2 rounded-lg mt-1">
-                    <CheckCircle className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">18+ Years Enterprise Expertise</h4>
-                    <p className="text-gray-600">Deep experience in SAP systems and enterprise architecture</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-indigo-100 p-2 rounded-lg mt-1">
-                    <CheckCircle className="h-5 w-5 text-indigo-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Deep Technical Know-How</h4>
-                    <p className="text-gray-600">Expertise in Datasphere, SAC, S/4, and AI integrations</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-teal-100 p-2 rounded-lg mt-1">
-                    <CheckCircle className="h-5 w-5 text-teal-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Strategic AI Guidance</h4>
-                    <p className="text-gray-600">End-to-end guidance for AI and data-driven transformation</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-orange-100 p-2 rounded-lg mt-1">
-                    <CheckCircle className="h-5 w-5 text-orange-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Trusted Advisor Model</h4>
-                    <p className="text-gray-600">From POC to scaled execution with ongoing support</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Enterprise Team"
-                className="w-full h-80 object-cover rounded-xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>
+        {/* Bottom CTA */}
+        <div className="text-center">
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-12 text-white">
+            <h3 className="text-3xl font-bold mb-4">
+              Ready to Transform Your Business?
+            </h3>
+            <p className="text-xl mb-8 opacity-90">
+              Let's discuss how these transformation areas can work together to drive your digital evolution.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="#contact"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+              >
+                <TrendingUp className="mr-2 h-5 w-5" />
+                Start Your Transformation
+              </a>
+              <a
+                href="#services"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+              >
+                Explore Our Solutions
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </div>
           </div>
         </div>
