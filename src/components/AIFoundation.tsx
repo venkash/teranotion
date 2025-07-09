@@ -243,7 +243,7 @@ const AIFoundation = () => {
 
         {/* CTA Section */}
         <div className="mt-16">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-12 text-white text-center">
+          <div className="bg-gradient-to-r from-gray-600 to-gray-700 rounded-2xl p-12 text-white text-center">
             <h3 className="text-3xl font-bold mb-4">
               Ready to Build Your AI Foundation?
             </h3>
@@ -253,14 +253,14 @@ const AIFoundation = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:contact@teranotion.com"
-                className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+                className="bg-white text-gray-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center"
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Email Us
               </a>
               <a
                 href="tel:+13466346646"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-gray-600 transition-colors duration-200 font-medium inline-flex items-center justify-center"
               >
                 <Phone className="mr-2 h-5 w-5" />
                 Call Now

@@ -160,7 +160,7 @@ const BlogPost = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl p-8 text-white text-center shadow-2xl">
+        <div className="mt-16 bg-gradient-to-r from-gray-700 to-gray-800 rounded-2xl p-8 text-white text-center shadow-2xl">
           <h3 className="text-2xl font-bold mb-4">
             Ready to Transform Your Business?
           </h3>
@@ -169,7 +169,7 @@ const BlogPost = () => {
           </p>
           <Link
             to="/#contact"
-            className="bg-white text-slate-700 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-block shadow-lg hover:shadow-xl"
+            className="bg-white text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-block shadow-lg hover:shadow-xl"
           >
             Get Started Today
           </Link>

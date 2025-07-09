@@ -263,7 +263,7 @@ const ServiceDetail = () => {
 
         {/* CTA Section */}
         <div className="mt-16">
-          <div className="bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl p-12 text-white text-center shadow-2xl">
+          <div className="bg-gradient-to-r from-gray-700 to-gray-800 rounded-2xl p-12 text-white text-center shadow-2xl">
             <h3 className="text-3xl font-bold mb-4">
               Ready to Implement {service.title}?
             </h3>
@@ -273,14 +273,14 @@ const ServiceDetail = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:contact@teranotion.com"
-                className="bg-white text-slate-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center shadow-lg hover:shadow-xl"
+                className="bg-white text-gray-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center shadow-lg hover:shadow-xl"
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Email Us
               </a>
               <a
                 href="tel:+13466346646"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-slate-700 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-gray-700 transition-colors duration-200 font-medium inline-flex items-center justify-center"
               >
                 <Phone className="mr-2 h-5 w-5" />
                 Call Now

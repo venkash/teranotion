@@ -378,7 +378,7 @@ const Resources = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl p-12 text-white text-center shadow-2xl">
+        <div className="bg-gradient-to-r from-gray-700 to-gray-800 rounded-2xl p-12 text-white text-center shadow-2xl">
           <h3 className="text-3xl font-bold mb-4">
             Stay Updated with Our Latest Insights
           </h3>
@@ -391,7 +391,7 @@ const Resources = () => {
               placeholder="Enter your email"
               className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-slate-300"
             />
-            <button className="bg-white text-slate-700 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium shadow-lg hover:shadow-xl">
+            <button className="bg-white text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium shadow-lg hover:shadow-xl">
               Subscribe
             </button>
           </div>

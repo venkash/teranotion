@@ -216,7 +216,7 @@ const Services = () => {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl p-12 text-white">
+          <div className="bg-gradient-to-r from-gray-700 to-gray-800 rounded-2xl p-12 text-white">
             <h3 className="text-3xl font-bold mb-4">
               Ready to Transform Your Enterprise?
             </h3>
@@ -227,14 +227,14 @@ const Services = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact"
-                className="bg-white text-slate-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+                className="bg-white text-gray-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center"
               >
                 Schedule Consultation
                 <Zap className="ml-2 h-5 w-5" />
               </a>
               <a
                 href="#about"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-slate-700 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-gray-700 transition-colors duration-200 font-medium inline-flex items-center justify-center"
               >
                 Learn About Us
                 <ArrowRight className="ml-2 h-5 w-5" />
