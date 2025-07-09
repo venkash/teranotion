@@ -19,7 +19,7 @@ const About = () => {
       icon: Globe,
       title: 'Global Reach',
       description: 'Serving clients across 25+ countries',
-      color: 'from-indigo-600 to-indigo-700'
+      color: 'from-blue-600 to-blue-700'
     }
   ];
 
@@ -62,7 +62,7 @@ const About = () => {
                     </h3>
                     <p className="text-gray-600">
                       {achievement.description}
-                  <CheckCircle className="h-5 w-5 text-blue-600" />
+                    </p>
                   </div>
                 </div>
               ))}
@@ -76,7 +76,7 @@ const About = () => {
               <div className="grid grid-cols-2 gap-3">
                 {expertise.map((skill, index) => (
                   <div key={index} className="flex items-center space-x-2">
-                    <CheckCircle className="h-5 w-5 text-slate-600" />
+                    <CheckCircle className="h-5 w-5 text-blue-600" />
                     <span className="text-gray-700">{skill}</span>
                   </div>
                 ))}
@@ -115,7 +115,6 @@ const About = () => {
             </div>
 
             {/* Certifications */}
-            <div className="mt-8 bg-gradient-to-r from-slate-700 to-slate-800 rounded-xl p-6 text-white shadow-xl">
             <div className="mt-8 bg-gradient-to-r from-blue-700 to-blue-800 rounded-xl p-6 text-white shadow-xl">
               <h3 className="text-xl font-bold mb-2">SAP Gold Partner & AI Specialist</h3>
               <p className="opacity-90">
