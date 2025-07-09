@@ -11,7 +11,7 @@ const Hero = () => {
       icon: Database,
       title: 'SAP Business Data Cloud',
       description: 'Unified data fabric with real-time analytics',
-      color: 'from-slate-500 to-slate-600',
+      color: 'from-blue-500 to-blue-600',
       delay: '0s'
     },
     {
@@ -19,7 +19,7 @@ const Hero = () => {
       icon: Bot,
       title: 'AI Agents (Joule)',
       description: 'Intelligent automation & decision making',
-      color: 'from-blue-500 to-blue-600',
+      color: 'from-blue-600 to-blue-700',
       delay: '0.2s'
     },
     {
@@ -27,7 +27,7 @@ const Hero = () => {
       icon: BarChart3,
       title: 'SAP Analytics Cloud',
       description: 'Self-service insights & predictive analytics',
-      color: 'from-indigo-500 to-indigo-600',
+      color: 'from-blue-400 to-blue-500',
       delay: '0.4s'
     },
     {
@@ -35,7 +35,7 @@ const Hero = () => {
       icon: Workflow,
       title: 'SAP Build & Integration',
       description: 'Low-code platform for rapid development',
-      color: 'from-gray-500 to-gray-600',
+      color: 'from-blue-700 to-blue-800',
       delay: '0.6s'
     }
   ];
@@ -129,7 +129,7 @@ const Hero = () => {
                 >
                   <div
                     key={currentOfferingIndex}
-                    className="relative overflow-hidden rounded-xl bg-gradient-to-r from-gray-50 to-gray-100 p-8 hover:shadow-lg transition-all duration-500 cursor-pointer animate-fadeInScale"
+                    className="relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-50 to-blue-100 p-8 hover:shadow-lg transition-all duration-500 cursor-pointer animate-fadeInScale"
                   >
                     {/* Animated background gradient */}
                     <div className={`absolute inset-0 bg-gradient-to-r ${currentOffering.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
@@ -150,7 +150,7 @@ const Hero = () => {
                         </p>
                         
                         {/* Learn More Button */}
-                        <div className="inline-flex items-center text-slate-700 hover:text-slate-800 font-medium transition-colors duration-200">
+                        <div className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200">
                           Learn More
                           <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                         </div>
@@ -158,7 +158,7 @@ const Hero = () => {
                     </div>
                     
                     {/* Animated border */}
-                    <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-slate-500 to-blue-500 w-0 group-hover:w-full transition-all duration-500"></div>
+                    <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-600 w-0 group-hover:w-full transition-all duration-500"></div>
                   </div>
                 </Link>
               </div>
@@ -171,7 +171,7 @@ const Hero = () => {
                     onClick={() => setCurrentOfferingIndex(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       index === currentOfferingIndex 
-                        ? 'bg-slate-600 scale-125' 
+                        ? 'bg-blue-600 scale-125' 
                         : 'bg-gray-300 hover:bg-gray-400'
                     }`}
                   />
@@ -182,7 +182,7 @@ const Hero = () => {
               <div className="mt-8 pt-6 border-t border-gray-200 text-center">
                 <a
                   href="#services"
-                  className="inline-flex items-center text-slate-700 hover:text-slate-800 font-medium transition-colors duration-200"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
                 >
                   View All Solutions
                   <Zap className="ml-2 h-4 w-4" />
@@ -191,7 +191,7 @@ const Hero = () => {
             </div>
 
             {/* Floating elements */}
-            <div className="absolute -top-6 -right-6 w-12 h-12 bg-slate-400 rounded-full opacity-20 animate-bounce"></div>
+            <div className="absolute -top-6 -right-6 w-12 h-12 bg-blue-400 rounded-full opacity-20 animate-bounce"></div>
             <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-blue-400 rounded-full opacity-30 animate-bounce delay-500"></div>
           </div>
         </div>
