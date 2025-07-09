@@ -93,9 +93,9 @@ const Hero = () => {
                   <div className="text-sm font-medium text-gray-700">Analytics</div>
                   <div className="text-xs text-gray-500">Predictive Insights</div>
                 </div>
-                <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 p-4 rounded-lg text-center group hover:shadow-md transition-all duration-200">
-                  <Sparkles className="h-8 w-8 text-emerald-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                  <div className="text-sm font-medium text-gray-700">S/4 Integration</div>
+                <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 p-4 rounded-lg text-center group hover:shadow-md transition-all duration-200">
+                  <Sparkles className="h-8 w-8 text-indigo-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                  <div className="text-sm font-medium text-gray-700">Integration</div>
                   <div className="text-xs text-gray-500">End-to-End</div>
                 </div>
               </div>

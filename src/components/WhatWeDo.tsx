@@ -30,8 +30,8 @@ const WhatWeDo = () => {
         'Citizen developer enablement'
       ],
       tools: ['SAP Build Platform', 'SAP Integration Suite', 'SAP Process Automation'],
-      color: 'emerald',
-      gradient: 'from-emerald-600 to-emerald-700'
+      color: 'indigo',
+      gradient: 'from-indigo-600 to-indigo-700'
     },
     {
       id: 'ai-foundation',
@@ -53,7 +53,7 @@ const WhatWeDo = () => {
   const getColorClasses = (color: string) => {
     const colors = {
       slate: 'bg-slate-50 border-slate-200 hover:border-slate-300',
-      emerald: 'bg-emerald-50 border-emerald-200 hover:border-emerald-300',
+      indigo: 'bg-indigo-50 border-indigo-200 hover:border-indigo-300',
       blue: 'bg-blue-50 border-blue-200 hover:border-blue-300'
     };
     return colors[color as keyof typeof colors] || colors.slate;
@@ -62,7 +62,7 @@ const WhatWeDo = () => {
   const getIconColor = (color: string) => {
     const colors = {
       slate: 'text-slate-600',
-      emerald: 'text-emerald-600',
+      indigo: 'text-indigo-600',
       blue: 'text-blue-600',
     };
     return colors[color as keyof typeof colors] || colors.slate;

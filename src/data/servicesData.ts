@@ -165,6 +165,6 @@ export const servicesData = [
       'SAP Mobile Services - Mobile app development',
       'SAP Extension Suite - Application extension platform'
     ],
-    color: 'emerald'
+    color: 'indigo'
   }
 ];
