@@ -7,7 +7,7 @@ const About = () => {
       icon: Award,
       title: 'SAP Certified Partners',
       description: 'Official SAP Gold Partner with certified consultants',
-      color: 'from-slate-600 to-slate-700'
+      color: 'from-blue-600 to-blue-700'
     },
     {
       icon: Users,
@@ -62,7 +62,7 @@ const About = () => {
                     </h3>
                     <p className="text-gray-600">
                       {achievement.description}
-                    </p>
+                  <CheckCircle className="h-5 w-5 text-blue-600" />
                   </div>
                 </div>
               ))}
@@ -96,7 +96,7 @@ const About = () => {
               {/* Stats */}
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-slate-700 mb-2">500+</div>
+                  <div className="text-3xl font-bold text-blue-700 mb-2">500+</div>
                   <div className="text-sm text-gray-600">Projects Delivered</div>
                 </div>
                 <div className="text-center">
@@ -104,11 +104,11 @@ const About = () => {
                   <div className="text-sm text-gray-600">Years SAP Expertise</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-indigo-600 mb-2">99%</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">99%</div>
                   <div className="text-sm text-gray-600">Success Rate</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-600 mb-2">24/7</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
                   <div className="text-sm text-gray-600">Support</div>
                 </div>
               </div>
@@ -116,6 +116,7 @@ const About = () => {
 
             {/* Certifications */}
             <div className="mt-8 bg-gradient-to-r from-slate-700 to-slate-800 rounded-xl p-6 text-white shadow-xl">
+            <div className="mt-8 bg-gradient-to-r from-blue-700 to-blue-800 rounded-xl p-6 text-white shadow-xl">
               <h3 className="text-xl font-bold mb-2">SAP Gold Partner & AI Specialist</h3>
               <p className="opacity-90">
                 Certified across the complete SAP Business Technology Platform ecosystem

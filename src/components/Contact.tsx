@@ -208,7 +208,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-slate-700 to-slate-800 text-white py-4 px-6 rounded-lg hover:from-slate-800 hover:to-slate-900 transition-all duration-200 font-medium flex items-center justify-center shadow-lg hover:shadow-xl"
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 px-6 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 font-medium flex items-center justify-center shadow-lg hover:shadow-xl"
               >
                 Send Message
                 <Send className="ml-2 h-5 w-5" />
@@ -225,7 +225,7 @@ const Contact = () => {
             <div className="space-y-6 mb-8">
               {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-start space-x-4 group">
-                  <div className="bg-gradient-to-r from-slate-600 to-slate-700 p-3 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-3 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300">
                     <info.icon className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -234,7 +234,7 @@ const Contact = () => {
                     </h4>
                     <a
                       href={info.link}
-                      className="text-gray-600 hover:text-slate-700 transition-colors duration-200"
+                      className="text-gray-600 hover:text-blue-700 transition-colors duration-200"
                     >
                       {info.value}
                     </a>
@@ -244,9 +244,9 @@ const Contact = () => {
             </div>
 
             {/* Business Hours */}
-            <div className="bg-gradient-to-r from-slate-50 to-gray-50 rounded-xl p-6 mb-8 border border-gray-200">
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 mb-8 border border-blue-200">
               <div className="flex items-center space-x-3 mb-4">
-                <Clock className="h-6 w-6 text-slate-600" />
+                <Clock className="h-6 w-6 text-blue-600" />
                 <h4 className="font-semibold text-gray-900">Business Hours</h4>
               </div>
               <div className="space-y-2 text-gray-600">

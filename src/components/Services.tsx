@@ -74,40 +74,40 @@ const Services = () => {
 
   const getColorClasses = (color: string) => {
     const colors = {
-      slate: 'bg-slate-50 text-slate-600 group-hover:bg-slate-600',
+      slate: 'bg-blue-50 text-blue-600 group-hover:bg-blue-600',
       blue: 'bg-blue-50 text-blue-600 group-hover:bg-blue-600',
-      gray: 'bg-gray-50 text-gray-600 group-hover:bg-gray-600',
-      indigo: 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600'
+      gray: 'bg-blue-50 text-blue-600 group-hover:bg-blue-600',
+      indigo: 'bg-blue-50 text-blue-600 group-hover:bg-blue-600'
     };
     return colors[color as keyof typeof colors] || colors.slate;
   };
 
   const getBorderColor = (color: string) => {
     const colors = {
-      slate: 'border-slate-200 hover:border-slate-300',
+      slate: 'border-blue-200 hover:border-blue-300',
       blue: 'border-blue-200 hover:border-blue-300',
-      gray: 'border-gray-200 hover:border-gray-300',
-      indigo: 'border-indigo-200 hover:border-indigo-300'
+      gray: 'border-blue-200 hover:border-blue-300',
+      indigo: 'border-blue-200 hover:border-blue-300'
     };
     return colors[color as keyof typeof colors] || colors.slate;
   };
 
   const getAccentColor = (color: string) => {
     const colors = {
-      slate: 'text-slate-600',
+      slate: 'text-blue-600',
       blue: 'text-blue-600',
-      gray: 'text-gray-600',
-      indigo: 'text-indigo-600'
+      gray: 'text-blue-600',
+      indigo: 'text-blue-600'
     };
     return colors[color as keyof typeof colors] || colors.slate;
   };
 
   const getCategoryColor = (color: string) => {
     const colors = {
-      slate: 'bg-slate-100 text-slate-800',
+      slate: 'bg-blue-100 text-blue-800',
       blue: 'bg-blue-100 text-blue-800',
-      gray: 'bg-gray-100 text-gray-800',
-      indigo: 'bg-indigo-100 text-indigo-800'
+      gray: 'bg-blue-100 text-blue-800',
+      indigo: 'bg-blue-100 text-blue-800'
     };
     return colors[color as keyof typeof colors] || colors.slate;
   };

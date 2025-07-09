@@ -66,7 +66,7 @@ const Hero = () => {
             <div className="relative z-10">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
                 Transform Your Enterprise with
-                <span className="text-slate-700 block mt-2">SAP Cloud & AI Solutions</span>
+                <span className="text-blue-700 block mt-2">SAP Cloud & AI Solutions</span>
               </h1>
               
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
@@ -78,14 +78,14 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <a
                   href="#contact"
-                  className="bg-slate-700 text-white px-8 py-4 rounded-lg hover:bg-slate-800 transition-all duration-200 font-medium flex items-center justify-center group shadow-lg hover:shadow-xl"
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 font-medium flex items-center justify-center group shadow-lg hover:shadow-xl"
                 >
                   Start Your Transformation
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
                   href="#what-we-do"
-                  className="border-2 border-slate-700 text-slate-700 px-8 py-4 rounded-lg hover:bg-slate-700 hover:text-white transition-all duration-200 font-medium text-center"
+                  className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-200 font-medium text-center shadow-sm hover:shadow-lg"
                 >
                   Explore Solutions
                 </a>
@@ -94,15 +94,15 @@ const Hero = () => {
               {/* Trust Indicators */}
               <div className="grid grid-cols-3 gap-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-slate-700 mb-1">18+</div>
+                  <div className="text-3xl font-bold text-blue-700 mb-1">18+</div>
                   <div className="text-sm text-gray-600">Years SAP Expertise</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-slate-700 mb-1">500+</div>
+                  <div className="text-3xl font-bold text-blue-700 mb-1">500+</div>
                   <div className="text-sm text-gray-600">Projects Delivered</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-slate-700 mb-1">99%</div>
+                  <div className="text-3xl font-bold text-blue-700 mb-1">99%</div>
                   <div className="text-sm text-gray-600">Client Success Rate</div>
                 </div>
               </div>

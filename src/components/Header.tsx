@@ -20,7 +20,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <Logo className="h-8 w-8 text-slate-700" />
+            <Logo className="h-8 w-8 text-blue-600" />
             <span className="text-2xl font-bold text-gray-900">Teranotion</span>
           </Link>
 
@@ -51,7 +51,7 @@ const Header = () => {
           <div className="hidden md:flex">
             <a
               href="/#contact"
-              className="bg-slate-700 text-white px-6 py-2 rounded-lg hover:bg-slate-800 transition-colors duration-200 font-medium"
+              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 font-medium shadow-lg hover:shadow-xl"
             >
               Get Started
             </a>
@@ -97,7 +97,7 @@ const Header = () => {
               ))}
               <a
                 href="/#contact"
-                className="bg-slate-700 text-white px-6 py-2 rounded-lg hover:bg-slate-800 transition-colors duration-200 font-medium text-center mt-4"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 font-medium text-center mt-4 shadow-lg hover:shadow-xl"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Get Started
