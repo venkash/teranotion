@@ -427,7 +427,7 @@ const ContentManagement = () => {
               onClick={() => setActiveTab(tab.id as any)}
               className={`flex items-center px-6 py-3 mx-2 mb-2 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow-md ${
                 activeTab === tab.id
-                  ? 'bg-gradient-to-r from-slate-700 to-slate-800 text-white shadow-lg'
+                  ? 'bg-gradient-to-r from-gray-700 to-gray-800 text-white shadow-lg'
                   : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
             >
@@ -441,7 +441,7 @@ const ContentManagement = () => {
         <div className="mb-8">
           <button
             onClick={() => setShowCreateModal(true)}
-            className="bg-gradient-to-r from-slate-700 to-slate-800 text-white px-6 py-3 rounded-lg hover:from-slate-800 hover:to-slate-900 transition-all duration-200 font-medium flex items-center shadow-lg hover:shadow-xl"
+            className="bg-gradient-to-r from-gray-700 to-gray-800 text-white px-6 py-3 rounded-lg hover:from-gray-800 hover:to-gray-900 transition-all duration-200 font-medium flex items-center shadow-lg hover:shadow-xl"
           >
             <Plus className="h-5 w-5 mr-2" />
             Create New {tabs.find(t => t.id === activeTab)?.label.slice(0, -1)}
