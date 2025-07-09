@@ -7,6 +7,9 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ServiceDetail from './components/ServiceDetail';
+import Resources from './components/Resources';
+import BlogPost from './components/BlogPost';
+import ContentManagement from './components/ContentManagement';
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
           </>
         } />
         <Route path="/services/:serviceId" element={<ServiceDetail />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/admin/content" element={<ContentManagement />} />
       </Routes>
       <Footer />
     </div>
