@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
   ArrowLeft, 
+  ArrowUp,
   CheckCircle, 
   TrendingUp, 
   Workflow, 
@@ -19,6 +20,10 @@ import { servicesData } from '../data/servicesData';
 const ServiceDetail = () => {
   const { serviceId } = useParams();
   const service = servicesData.find(s => s.id === serviceId);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   if (!service) {
     return (
@@ -99,12 +104,33 @@ const ServiceDetail = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50">
+      {/* Sticky Navigation Buttons */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        {/* Back to Services Button */}
+        <Link
+          to="/#services"
+          className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
+          title="Back to Services"
+        >
+          <ArrowLeft className="h-6 w-6 group-hover:-translate-x-1 transition-transform" />
+        </Link>
+        
+        {/* Back to Top Button */}
+        <button
+          onClick={scrollToTop}
+          className="bg-gray-600 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
+          title="Back to Top"
+        >
+          <ArrowUp className="h-6 w-6 group-hover:-translate-y-1 transition-transform" />
+        </button>
+      </div>
+
       {/* Hero Section */}
       <div className={`bg-gradient-to-r ${getBgColor(service.color)} py-16`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Button */}
           <Link 
-            to="/" 
+            to="/#services" 
             className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8 transition-colors duration-200"
           >
             <ArrowLeft className="h-5 w-5 mr-2" />

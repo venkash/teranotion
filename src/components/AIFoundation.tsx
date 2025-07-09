@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowLeft, 
+  ArrowUp,
   Brain, 
   TrendingUp, 
   Zap, 
@@ -14,6 +15,10 @@ import {
 } from 'lucide-react';
 
 const AIFoundation = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const keyCapabilities = [
     'Enterprise AI model management with MLOps best practices',
     'Intelligent automation agents with contextual decision-making',
@@ -78,6 +83,27 @@ const AIFoundation = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Sticky Navigation Buttons */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        {/* Back to What We Do Button */}
+        <Link
+          to="/#what-we-do"
+          className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
+          title="Back to What We Do"
+        >
+          <ArrowLeft className="h-6 w-6 group-hover:-translate-x-1 transition-transform" />
+        </Link>
+        
+        {/* Back to Top Button */}
+        <button
+          onClick={scrollToTop}
+          className="bg-gray-600 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
+          title="Back to Top"
+        >
+          <ArrowUp className="h-6 w-6 group-hover:-translate-y-1 transition-transform" />
+        </button>
+      </div>
+
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-50 to-blue-100 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

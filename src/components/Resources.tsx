@@ -13,7 +13,8 @@ import {
   Search,
   Eye,
   ArrowRight,
-  X
+  X,
+  ArrowUp
 } from 'lucide-react';
 import { format } from 'date-fns';
 import { blogPosts, newsletters, externalLinks, videos, categories } from '../data/contentData';
@@ -22,6 +23,10 @@ const Resources = () => {
   const [activeTab, setActiveTab] = useState<'blog' | 'newsletters' | 'links' | 'videos'>('blog');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const tabs = [
     { id: 'blog', label: 'Blog Posts', icon: BookOpen, count: blogPosts.length },
@@ -292,6 +297,17 @@ const Resources = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50 py-16">
+      {/* Sticky Back to Top Button */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <button
+          onClick={scrollToTop}
+          className="bg-gray-600 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
+          title="Back to Top"
+        >
+          <ArrowUp className="h-6 w-6 group-hover:-translate-y-1 transition-transform" />
+        </button>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
