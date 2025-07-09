@@ -1,221 +1,131 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, TrendingUp, Database, Bot, Sparkles, Zap, Brain, BarChart3, Workflow } from 'lucide-react';
+import React from 'react';
+import { Award, Users, Globe, CheckCircle } from 'lucide-react';
 
-const Hero = () => {
-  const [currentOfferingIndex, setCurrentOfferingIndex] = useState(0);
-
-  const offerings = [
+const About = () => {
+  const achievements = [
     {
-      id: 'sap-business-data-cloud',
-      icon: Database,
-      title: 'SAP Business Data Cloud',
-      description: 'Unified data fabric with real-time analytics',
-      color: 'from-blue-500 to-blue-600',
-      delay: '0s'
+      icon: Users,
+      title: 'Expert SAP Consultants',
+      description: 'Team of specialized SAP professionals',
+      color: 'from-blue-600 to-blue-700'
     },
     {
-      id: 'ai-agents-automation',
-      icon: Bot,
-      title: 'AI Agents (Joule)',
-      description: 'Intelligent automation & decision making',
-      color: 'from-blue-600 to-blue-700',
-      delay: '0.2s'
+      icon: Globe,
+      title: 'Global Reach',
+      description: 'Serving clients worldwide',
+      color: 'from-blue-600 to-blue-700'
     },
     {
-      id: 'sap-analytics-cloud',
-      icon: BarChart3,
-      title: 'SAP Analytics Cloud',
-      description: 'Self-service insights & predictive analytics',
-      color: 'from-blue-400 to-blue-500',
-      delay: '0.4s'
-    },
-    {
-      id: 'sap-build-integration',
-      icon: Workflow,
-      title: 'SAP Build & Integration',
-      description: 'Low-code platform for rapid development',
-      color: 'from-blue-700 to-blue-800',
-      delay: '0.6s'
+      icon: Award,
+      title: 'SAP Certified Excellence',
+      description: 'Certified across SAP Business Technology Platform',
+      color: 'from-blue-600 to-blue-700'
     }
   ];
 
-  // Auto-cycle through offerings
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentOfferingIndex((prevIndex) => 
-        (prevIndex + 1) % offerings.length
-      );
-    }, 3000); // Change every 3 seconds
-
-    return () => clearInterval(interval);
-  }, [offerings.length]);
-
-  const currentOffering = offerings[currentOfferingIndex];
+  const expertise = [
+    'SAP Business Data Cloud',
+    'AI Agents & Automation',
+    'SAP Analytics Cloud',
+    'SAP AI Core & Foundation',
+    'SAP Datasphere',
+    'SAP Build Platform',
+    'Cloud-Native Architecture',
+    'Intelligent Process Automation'
+  ];
 
   return (
-    <section id="home" className="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 pt-16 pb-20 overflow-hidden">
+    <section id="about" className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
-          <div className="relative">
-            {/* Animated background elements */}
-            <div className="absolute -top-4 -left-4 w-72 h-72 bg-emerald-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse"></div>
-            <div className="absolute -bottom-8 -right-4 w-72 h-72 bg-teal-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse delay-1000"></div>
-            
-            <div className="relative z-10">
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
-                <span className="text-2xl md:text-3xl">Transform Your Enterprise with</span>
-                <span className="text-emerald-700 block mt-2 text-4xl md:text-5xl">SAP Business Data Cloud & AI Solutions</span>
-              </h1>
-              
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Unlock the power of unified data, intelligent automation, and predictive analytics. 
-                18+ years of SAP expertise delivering enterprise-grade cloud and AI transformations.
-              </p>
-              
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <a
-                  href="#contact"
-                  className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg hover:from-emerald-700 hover:to-teal-700 transition-all duration-200 font-medium flex items-center justify-center group shadow-lg hover:shadow-xl"
-                >
-                  Start Your Transformation
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-                <a
-                  href="#what-we-do"
-                  className="border-2 border-emerald-600 text-emerald-600 px-8 py-4 rounded-lg hover:bg-emerald-600 hover:text-white transition-all duration-200 font-medium text-center shadow-sm hover:shadow-lg"
-                >
-                  Explore Solutions
-                </a>
-              </div>
+          <div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Your Trusted SAP Cloud & AI Partner
+            </h2>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              With 18+ years of SAP expertise, we're at the forefront of cloud and AI innovation. 
+              We help organizations harness intelligent automation and cloud-native analytics to 
+              drive measurable business transformation across the entire SAP ecosystem.
+            </p>
 
-              {/* Trust Indicators */}
-              <div className="grid grid-cols-3 gap-8">
+            {/* Achievements */}
+            <div className="space-y-6 mb-8">
+              {achievements.map((achievement, index) => (
+                <div key={index} className="flex items-start space-x-4 group">
+                  <div className={`bg-gradient-to-r ${achievement.color} p-3 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+                    <achievement.icon className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      {achievement.title}
+                    </h3>
+                    <p className="text-gray-600">
+                      {achievement.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Expertise Grid */}
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Core Expertise Areas
+              </h3>
+              <div className="grid grid-cols-2 gap-3">
+                {expertise.map((skill, index) => (
+                  <div key={index} className="flex items-center space-x-2">
+                    <CheckCircle className="h-5 w-5 text-blue-600" />
+                    <span className="text-gray-700">{skill}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Visual */}
+          <div className="relative">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 backdrop-blur-sm bg-opacity-95">
+              <img
+                src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Our Team"
+                className="w-full h-64 object-cover rounded-lg mb-6"
+              />
+              
+              {/* Stats */}
+              <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-emerald-700 mb-1">18+</div>
+                  <div className="text-3xl font-bold text-blue-700 mb-2">18+</div>
                   <div className="text-sm text-gray-600">Years SAP Expertise</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-emerald-700 mb-1">BTP</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">BTP</div>
                   <div className="text-sm text-gray-600">Platform Certified</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-emerald-700 mb-1">AI</div>
-                  <div className="text-sm text-gray-600">Ready Solutions</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">Cloud</div>
+                  <div className="text-sm text-gray-600">Native Solutions</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
+                  <div className="text-sm text-gray-600">Support</div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Right Column - Cycling Offering Display */}
-          <div className="relative">
-            {/* Main Container */}
-            <div className="bg-white rounded-2xl shadow-2xl p-8 backdrop-blur-sm bg-opacity-90">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-4">
-                  <Sparkles className="h-4 w-4 mr-2" />
-                  Our Core Offerings
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">Enterprise SAP Solutions</h3>
-              </div>
-              
-              {/* Current Offering Display */}
-              <div className="relative h-64 flex items-center justify-center">
-                <Link 
-                  to={`/services/${currentOffering.id}`}
-                  className="group w-full"
-                >
-                  <div
-                    key={currentOfferingIndex}
-                    className="relative overflow-hidden rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 p-8 hover:shadow-lg transition-all duration-500 cursor-pointer animate-fadeInScale"
-                  >
-                    {/* Animated background gradient */}
-                    <div className={`absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                    
-                    <div className="relative text-center">
-                      {/* Icon with animation */}
-                      <div className={`w-16 h-16 mx-auto mb-4 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                        <currentOffering.icon className="h-8 w-8 text-white" />
-                      </div>
-                      
-                      {/* Content */}
-                      <div>
-                        <h4 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-slate-700 transition-colors">
-                          {currentOffering.title}
-                        </h4>
-                        <p className="text-gray-600 mb-6 text-lg">
-                          {currentOffering.description}
-                        </p>
-                        
-                        {/* Learn More Button */}
-                        <div className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium transition-colors duration-200">
-                          Learn More
-                          <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Animated border */}
-                    <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 w-0 group-hover:w-full transition-all duration-500"></div>
-                  </div>
-                </Link>
-              </div>
-
-              {/* Dots Indicator */}
-              <div className="flex justify-center space-x-2 mt-6">
-                {offerings.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentOfferingIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === currentOfferingIndex 
-                        ? 'bg-emerald-600 scale-125' 
-                        : 'bg-gray-300 hover:bg-gray-400'
-                    }`}
-                  />
-                ))}
-              </div>
-
-              {/* Bottom CTA */}
-              <div className="mt-8 pt-6 border-t border-gray-200 text-center">
-                <a
-                  href="#services"
-                  className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium transition-colors duration-200"
-                >
-                  View All Solutions
-                  <Zap className="ml-2 h-4 w-4" />
-                </a>
-              </div>
+            {/* Certifications */}
+            <div className="mt-8 bg-gradient-to-r from-blue-700 to-blue-800 rounded-xl p-6 text-white shadow-xl">
+              <h3 className="text-xl font-bold mb-2">SAP Certified & AI Specialist</h3>
+              <p className="opacity-90">
+                Certified across the complete SAP Business Technology Platform ecosystem
+              </p>
             </div>
-
-            {/* Floating elements */}
-            <div className="absolute -top-6 -right-6 w-12 h-12 bg-emerald-400 rounded-full opacity-20 animate-bounce"></div>
-            <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-teal-400 rounded-full opacity-30 animate-bounce delay-500"></div>
           </div>
         </div>
       </div>
-
-      {/* Custom CSS for animations */}
-      <style jsx>{`
-        @keyframes fadeInScale {
-          from {
-            opacity: 0;
-            transform: scale(0.95);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-        
-        .animate-fadeInScale {
-          animation: fadeInScale 0.6s ease-out forwards;
-        }
-      `}</style>
     </section>
   );
 };
 
-export default Hero;
+export default About;
