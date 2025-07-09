@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { TrendingUp, Database, Brain, Workflow, CheckCircle, ArrowRight } from 'lucide-react';
 
 const WhatWeDo = () => {
@@ -15,8 +16,8 @@ const WhatWeDo = () => {
         'AI-powered insights and recommendations'
       ],
       tools: ['SAP Business Data Cloud', 'SAP Analytics Cloud', 'SAP HANA Cloud'],
-      color: 'slate',
-      gradient: 'from-slate-600 to-slate-700'
+      color: 'blue',
+      gradient: 'from-blue-600 to-blue-700'
     },
     {
       id: 'digital-transformation',
@@ -30,8 +31,8 @@ const WhatWeDo = () => {
         'Citizen developer enablement'
       ],
       tools: ['SAP Build Platform', 'SAP Integration Suite', 'SAP Process Automation'],
-      color: 'indigo',
-      gradient: 'from-indigo-600 to-indigo-700'
+      color: 'blue',
+      gradient: 'from-blue-500 to-blue-600'
     },
     {
       id: 'ai-foundation',
@@ -46,26 +47,22 @@ const WhatWeDo = () => {
       ],
       tools: ['SAP AI Core', 'Joule Framework', 'SAP AI Business Services'],
       color: 'blue',
-      gradient: 'from-blue-600 to-blue-700'
+      gradient: 'from-blue-700 to-blue-800'
     }
   ];
 
   const getColorClasses = (color: string) => {
     const colors = {
-      slate: 'bg-slate-50 border-slate-200 hover:border-slate-300',
-      indigo: 'bg-indigo-50 border-indigo-200 hover:border-indigo-300',
       blue: 'bg-blue-50 border-blue-200 hover:border-blue-300'
     };
-    return colors[color as keyof typeof colors] || colors.slate;
+    return colors[color as keyof typeof colors] || colors.blue;
   };
 
   const getIconColor = (color: string) => {
     const colors = {
-      slate: 'text-slate-600',
-      indigo: 'text-indigo-600',
-      blue: 'text-blue-600',
+      blue: 'text-blue-600'
     };
-    return colors[color as keyof typeof colors] || colors.slate;
+    return colors[color as keyof typeof colors] || colors.blue;
   };
 
   const getButtonColor = (gradient: string) => {
@@ -73,7 +70,7 @@ const WhatWeDo = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="what-we-do" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -93,8 +90,12 @@ const WhatWeDo = () => {
         {/* Transformation Areas */}
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {transformationAreas.map((area, index) => (
-            <div
+            <Link
               key={area.id}
+              to={`/transformation/${area.id}`}
+              className="block"
+            >
+              <div
               className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 ${getColorClasses(area.color)} p-8`}
             >
               {/* Icon */}
@@ -139,20 +140,18 @@ const WhatWeDo = () => {
               </div>
 
               {/* CTA Button */}
-              <a 
-                href="#services"
-                className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-200 flex items-center justify-center ${getButtonColor(area.gradient)}`}
-              >
+              <div className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-200 flex items-center justify-center ${getButtonColor(area.gradient)} cursor-pointer`}>
                 Learn More
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </div>
+              </div>
+              </div>
+            </Link>
           ))}
         </div>
 
         {/* Bottom CTA */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl p-12 text-white">
+          <div className="bg-gradient-to-r from-blue-700 to-blue-800 rounded-2xl p-12 text-white">
             <h3 className="text-3xl font-bold mb-4">
               Ready to Transform Your Business?
             </h3>
@@ -162,14 +161,14 @@ const WhatWeDo = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact"
-                className="bg-white text-slate-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+                className="bg-white text-blue-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center"
               >
                 <TrendingUp className="mr-2 h-5 w-5" />
                 Start Your Transformation
               </a>
               <a
                 href="#services"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-slate-700 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-700 transition-colors duration-200 font-medium inline-flex items-center justify-center"
               >
                 Explore Our Solutions
                 <ArrowRight className="ml-2 h-5 w-5" />

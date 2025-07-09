@@ -11,6 +11,9 @@ import Footer from './components/Footer';
 import ServiceDetail from './components/ServiceDetail';
 import Resources from './components/Resources';
 import BlogPost from './components/BlogPost';
+import DataAnalyticsModernization from './components/DataAnalyticsModernization';
+import DigitalTransformation from './components/DigitalTransformation';
+import AIFoundation from './components/AIFoundation';
 import ContentManagement from './components/ContentManagement';
 
 function App() {
@@ -29,6 +32,9 @@ function App() {
           </>
         } />
         <Route path="/services/:serviceId" element={<ServiceDetail />} />
+        <Route path="/transformation/data-analytics-modernization" element={<DataAnalyticsModernization />} />
+        <Route path="/transformation/digital-transformation" element={<DigitalTransformation />} />
+        <Route path="/transformation/ai-foundation" element={<AIFoundation />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/admin/content" element={<ContentManagement />} />
