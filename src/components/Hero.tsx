@@ -1,9 +1,13 @@
-import React from 'react';
-import { ArrowRight, TrendingUp, Database, Bot, Sparkles, Zap, Brain, BarChart3 } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, TrendingUp, Database, Bot, Sparkles, Zap, Brain, BarChart3, Workflow } from 'lucide-react';
 
 const Hero = () => {
+  const [currentOfferingIndex, setCurrentOfferingIndex] = useState(0);
+
   const offerings = [
     {
+      id: 'sap-business-data-cloud',
       icon: Database,
       title: 'SAP Business Data Cloud',
       description: 'Unified data fabric with real-time analytics',
@@ -11,6 +15,7 @@ const Hero = () => {
       delay: '0s'
     },
     {
+      id: 'ai-agents-automation',
       icon: Bot,
       title: 'AI Agents (Joule)',
       description: 'Intelligent automation & decision making',
@@ -18,13 +23,35 @@ const Hero = () => {
       delay: '0.2s'
     },
     {
+      id: 'sap-analytics-cloud',
       icon: BarChart3,
-      title: 'Analytics Modernization',
+      title: 'SAP Analytics Cloud',
       description: 'Self-service insights & predictive analytics',
       color: 'from-indigo-500 to-indigo-600',
       delay: '0.4s'
+    },
+    {
+      id: 'sap-build-integration',
+      icon: Workflow,
+      title: 'SAP Build & Integration',
+      description: 'Low-code platform for rapid development',
+      color: 'from-gray-500 to-gray-600',
+      delay: '0.6s'
     }
   ];
+
+  // Auto-cycle through offerings
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentOfferingIndex((prevIndex) => 
+        (prevIndex + 1) % offerings.length
+      );
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [offerings.length]);
+
+  const currentOffering = offerings[currentOfferingIndex];
 
   return (
     <section id="home" className="bg-gradient-to-br from-slate-50 via-white to-blue-50 pt-16 pb-20 overflow-hidden">
@@ -82,7 +109,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column - Animated Offerings */}
+          {/* Right Column - Cycling Offering Display */}
           <div className="relative">
             {/* Main Container */}
             <div className="bg-white rounded-2xl shadow-2xl p-8 backdrop-blur-sm bg-opacity-90">
@@ -94,43 +121,60 @@ const Hero = () => {
                 <h3 className="text-xl font-bold text-gray-900">Enterprise SAP Solutions</h3>
               </div>
               
-              {/* Animated Tiles */}
-              <div className="space-y-4">
-                {offerings.map((offering, index) => (
+              {/* Current Offering Display */}
+              <div className="relative h-64 flex items-center justify-center">
+                <Link 
+                  to={`/services/${currentOffering.id}`}
+                  className="group w-full"
+                >
                   <div
-                    key={index}
-                    className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-gray-50 to-gray-100 p-6 hover:shadow-lg transition-all duration-500 cursor-pointer"
-                    style={{ 
-                      animationDelay: offering.delay,
-                      animation: 'slideInRight 0.8s ease-out forwards'
-                    }}
+                    key={currentOfferingIndex}
+                    className="relative overflow-hidden rounded-xl bg-gradient-to-r from-gray-50 to-gray-100 p-8 hover:shadow-lg transition-all duration-500 cursor-pointer animate-fadeInScale"
                   >
                     {/* Animated background gradient */}
-                    <div className={`absolute inset-0 bg-gradient-to-r ${offering.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-r ${currentOffering.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
                     
-                    <div className="relative flex items-center space-x-4">
+                    <div className="relative text-center">
                       {/* Icon with animation */}
-                      <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${offering.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                        <offering.icon className="h-6 w-6 text-white" />
+                      <div className={`w-16 h-16 mx-auto mb-4 rounded-lg bg-gradient-to-r ${currentOffering.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                        <currentOffering.icon className="h-8 w-8 text-white" />
                       </div>
                       
                       {/* Content */}
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-slate-700 transition-colors">
-                          {offering.title}
+                      <div>
+                        <h4 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-slate-700 transition-colors">
+                          {currentOffering.title}
                         </h4>
-                        <p className="text-sm text-gray-600">
-                          {offering.description}
+                        <p className="text-gray-600 mb-6 text-lg">
+                          {currentOffering.description}
                         </p>
+                        
+                        {/* Learn More Button */}
+                        <div className="inline-flex items-center text-slate-700 hover:text-slate-800 font-medium transition-colors duration-200">
+                          Learn More
+                          <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                        </div>
                       </div>
-                      
-                      {/* Arrow indicator */}
-                      <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-slate-600 group-hover:translate-x-1 transition-all duration-300" />
                     </div>
                     
                     {/* Animated border */}
                     <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-slate-500 to-blue-500 w-0 group-hover:w-full transition-all duration-500"></div>
                   </div>
+                </Link>
+              </div>
+
+              {/* Dots Indicator */}
+              <div className="flex justify-center space-x-2 mt-6">
+                {offerings.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentOfferingIndex(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentOfferingIndex 
+                        ? 'bg-slate-600 scale-125' 
+                        : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
+                  />
                 ))}
               </div>
 
@@ -153,17 +197,21 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Custom CSS for slide-in animation */}
+      {/* Custom CSS for animations */}
       <style jsx>{`
-        @keyframes slideInRight {
+        @keyframes fadeInScale {
           from {
             opacity: 0;
-            transform: translateX(30px);
+            transform: scale(0.95);
           }
           to {
             opacity: 1;
-            transform: translateX(0);
+            transform: scale(1);
           }
+        }
+        
+        .animate-fadeInScale {
+          animation: fadeInScale 0.6s ease-out forwards;
         }
       `}</style>
     </section>
