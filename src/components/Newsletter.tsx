@@ -1,21 +1,47 @@
 import React, { useState } from 'react';
-import { Mail, Send, CheckCircle } from 'lucide-react';
+import { Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
 
 const Newsletter = () => {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle newsletter signup
-    console.log('Newsletter signup:', email);
-    setIsSubscribed(true);
-    setEmail('');
-    
-    // Reset after 3 seconds
-    setTimeout(() => {
-      setIsSubscribed(false);
-    }, 3000);
+    setIsLoading(true);
+    setError('');
+
+    try {
+      // Submit to Netlify Forms (works automatically if deployed on Netlify)
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'newsletter',
+          'email': email,
+          'timestamp': new Date().toISOString(),
+          'source': 'website'
+        }).toString()
+      });
+
+      if (response.ok) {
+        setIsSubscribed(true);
+        setEmail('');
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setIsSubscribed(false);
+        }, 5000);
+      } else {
+        throw new Error('Subscription failed');
+      }
+    } catch (err) {
+      setError('Something went wrong. Please try again.');
+      console.error('Newsletter subscription error:', err);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -37,32 +63,67 @@ const Newsletter = () => {
           </p>
 
           {!isSubscribed ? (
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+            <form 
+              onSubmit={handleSubmit} 
+              className="max-w-md mx-auto"
+              name="newsletter"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+            >
+              {/* Hidden fields for Netlify */}
+              <input type="hidden" name="form-name" value="newsletter" />
+              <input type="hidden" name="bot-field" />
+              
               <div className="flex flex-col sm:flex-row gap-4">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
-                  className="flex-1 px-6 py-4 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                  className="flex-1 px-6 py-4 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 disabled:opacity-50"
+                  disabled={isLoading}
                   required
                 />
                 <button
                   type="submit"
-                  className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium flex items-center justify-center"
+                  className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={isLoading}
                 >
-                  Subscribe
-                  <Send className="ml-2 h-5 w-5" />
+                  {isLoading ? (
+                    <>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600 mr-2"></div>
+                      Subscribing...
+                    </>
+                  ) : (
+                    <>
+                      Subscribe
+                      <Send className="ml-2 h-5 w-5" />
+                    </>
+                  )}
                 </button>
               </div>
+              
+              {error && (
+                <div className="flex items-center justify-center space-x-2 text-red-300 mt-4">
+                  <AlertCircle className="h-5 w-5" />
+                  <span>{error}</span>
+                </div>
+              )}
+              
               <p className="text-white opacity-75 text-sm mt-4">
                 No spam. Unsubscribe at any time. We respect your privacy.
               </p>
             </form>
           ) : (
-            <div className="flex items-center justify-center space-x-3 text-white">
-              <CheckCircle className="h-6 w-6 text-green-300" />
-              <span className="text-lg font-medium">Thank you for subscribing!</span>
+            <div className="text-center">
+              <div className="flex items-center justify-center space-x-3 text-white mb-4">
+                <CheckCircle className="h-8 w-8 text-green-300" />
+                <span className="text-xl font-medium">Thank you for subscribing!</span>
+              </div>
+              <p className="text-white opacity-90">
+                You'll receive our latest insights on SAP cloud and AI solutions.
+              </p>
             </div>
           )}
 

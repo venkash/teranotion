@@ -19,10 +19,38 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    
+    try {
+      // Submit to Netlify Forms
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          ...formData,
+          'timestamp': new Date().toISOString()
+        }).toString()
+      });
+
+      if (response.ok) {
+        alert('Thank you for your message! We\'ll get back to you soon.');
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      alert('Something went wrong. Please try again or contact us directly.');
+      console.error('Contact form error:', error);
+    }
   };
 
   const contactInfo = [
@@ -79,6 +107,9 @@ const Contact = () => {
             </h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Hidden fields for Netlify */}
+              <input type="hidden" name="form-name" value="contact" />
+              
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
