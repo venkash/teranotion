@@ -272,7 +272,7 @@ const Resources = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -291,9 +291,9 @@ const Resources = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`flex items-center px-6 py-3 mx-2 mb-2 rounded-lg font-medium transition-colors duration-200 ${
+              className={`flex items-center px-6 py-3 mx-2 mb-2 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow-md ${
                 activeTab === tab.id
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-gradient-to-r from-slate-700 to-slate-800 text-white shadow-lg'
                   : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
             >
@@ -301,7 +301,7 @@ const Resources = () => {
               {tab.label}
               <span className={`ml-2 px-2 py-1 rounded-full text-xs ${
                 activeTab === tab.id
-                  ? 'bg-blue-500 text-white'
+                  ? 'bg-slate-600 text-white'
                   : 'bg-gray-200 text-gray-600'
               }`}>
                 {tab.count}
@@ -322,7 +322,7 @@ const Resources = () => {
                   placeholder="Search resources..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
                 />
               </div>
             </div>
@@ -335,7 +335,7 @@ const Resources = () => {
                   <select
                     value={selectedCategory}
                     onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent appearance-none bg-white"
                   >
                     <option value="all">All Categories</option>
                     {categories.map((category) => (
@@ -359,7 +359,7 @@ const Resources = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-12 text-white text-center">
+        <div className="bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl p-12 text-white text-center shadow-2xl">
           <h3 className="text-3xl font-bold mb-4">
             Stay Updated with Our Latest Insights
           </h3>
@@ -370,9 +370,9 @@ const Resources = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-slate-300"
             />
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium">
+            <button className="bg-white text-slate-700 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium shadow-lg hover:shadow-xl">
               Subscribe
             </button>
           </div>

@@ -49,66 +49,56 @@ const ServiceDetail = () => {
 
   const getColorClasses = (color: string) => {
     const colors = {
-      blue: 'bg-blue-600 text-white',
-      teal: 'bg-teal-600 text-white',
-      orange: 'bg-orange-600 text-white',
-      purple: 'bg-purple-600 text-white',
-      green: 'bg-green-600 text-white',
-      red: 'bg-red-600 text-white'
+      slate: 'bg-gradient-to-r from-slate-600 to-slate-700 text-white',
+      blue: 'bg-gradient-to-r from-blue-600 to-blue-700 text-white',
+      gray: 'bg-gradient-to-r from-gray-600 to-gray-700 text-white',
+      indigo: 'bg-gradient-to-r from-indigo-600 to-indigo-700 text-white'
     };
-    return colors[color as keyof typeof colors] || colors.blue;
+    return colors[color as keyof typeof colors] || colors.slate;
   };
 
   const getAccentColor = (color: string) => {
     const colors = {
+      slate: 'text-slate-600',
       blue: 'text-blue-600',
-      teal: 'text-teal-600',
-      orange: 'text-orange-600',
-      purple: 'text-purple-600',
-      green: 'text-green-600',
-      red: 'text-red-600'
+      gray: 'text-gray-600',
+      indigo: 'text-indigo-600'
     };
-    return colors[color as keyof typeof colors] || colors.blue;
+    return colors[color as keyof typeof colors] || colors.slate;
   };
 
   const getBgColor = (color: string) => {
     const colors = {
+      slate: 'from-slate-50 to-slate-100',
       blue: 'from-blue-50 to-blue-100',
-      teal: 'from-teal-50 to-teal-100',
-      orange: 'from-orange-50 to-orange-100',
-      purple: 'from-purple-50 to-purple-100',
-      green: 'from-green-50 to-green-100',
-      red: 'from-red-50 to-red-100'
+      gray: 'from-gray-50 to-gray-100',
+      indigo: 'from-indigo-50 to-indigo-100'
     };
-    return colors[color as keyof typeof colors] || colors.blue;
+    return colors[color as keyof typeof colors] || colors.slate;
   };
 
   const getTagColor = (color: string) => {
     const colors = {
+      slate: 'bg-slate-100 text-slate-800',
       blue: 'bg-blue-100 text-blue-800',
-      teal: 'bg-teal-100 text-teal-800',
-      orange: 'bg-orange-100 text-orange-800',
-      purple: 'bg-purple-100 text-purple-800',
-      green: 'bg-green-100 text-green-800',
-      red: 'bg-red-100 text-red-800'
+      gray: 'bg-gray-100 text-gray-800',
+      indigo: 'bg-indigo-100 text-indigo-800'
     };
-    return colors[color as keyof typeof colors] || colors.blue;
+    return colors[color as keyof typeof colors] || colors.slate;
   };
 
   const getDotColor = (color: string) => {
     const colors = {
+      slate: 'bg-slate-500',
       blue: 'bg-blue-500',
-      teal: 'bg-teal-500',
-      orange: 'bg-orange-500',
-      purple: 'bg-purple-500',
-      green: 'bg-green-500',
-      red: 'bg-red-500'
+      gray: 'bg-gray-500',
+      indigo: 'bg-indigo-500'
     };
-    return colors[color as keyof typeof colors] || colors.blue;
+    return colors[color as keyof typeof colors] || colors.slate;
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50">
       {/* Hero Section */}
       <div className={`bg-gradient-to-r ${getBgColor(service.color)} py-16`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -273,7 +263,7 @@ const ServiceDetail = () => {
 
         {/* CTA Section */}
         <div className="mt-16">
-          <div className={`bg-gradient-to-r ${service.color === 'blue' ? 'from-blue-600 to-blue-700' : service.color === 'teal' ? 'from-teal-600 to-teal-700' : service.color === 'orange' ? 'from-orange-600 to-orange-700' : service.color === 'purple' ? 'from-purple-600 to-purple-700' : service.color === 'green' ? 'from-green-600 to-green-700' : 'from-red-600 to-red-700'} rounded-2xl p-12 text-white text-center`}>
+          <div className="bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl p-12 text-white text-center shadow-2xl">
             <h3 className="text-3xl font-bold mb-4">
               Ready to Implement {service.title}?
             </h3>
@@ -283,14 +273,14 @@ const ServiceDetail = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:contact@teranotion.com"
-                className="bg-white text-gray-900 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+                className="bg-white text-slate-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center shadow-lg hover:shadow-xl"
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Email Us
               </a>
               <a
                 href="tel:+13466346646"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-gray-900 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-slate-700 transition-colors duration-200 font-medium inline-flex items-center justify-center"
               >
                 <Phone className="mr-2 h-5 w-5" />
                 Call Now

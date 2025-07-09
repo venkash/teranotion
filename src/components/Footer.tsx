@@ -26,18 +26,18 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <Logo className="h-8 w-8 text-blue-400" />
+              <Logo className="h-8 w-8 text-slate-400" />
               <span className="text-2xl font-bold">Teranotion</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Your trusted partner for SAP cloud and AI solutions. 
-              Transforming businesses through intelligent automation and cloud-native analytics.
+              Your trusted SAP cloud and AI transformation partner. 18+ years of expertise 
+              delivering intelligent automation and cloud-native analytics solutions.
             </p>
             
             {/* Social Links */}
@@ -46,7 +46,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="bg-gray-800 p-2 rounded-lg hover:bg-blue-600 transition-colors duration-200"
+                  className="bg-slate-800 p-2 rounded-lg hover:bg-slate-700 transition-colors duration-200"
                   aria-label={social.label}
                 >
                   <social.icon className="h-5 w-5" />
@@ -94,7 +94,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-blue-400" />
+                <Mail className="h-5 w-5 text-slate-400" />
                 <a
                   href="mailto:contact@teranotion.com"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
@@ -103,7 +103,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-blue-400" />
+                <Phone className="h-5 w-5 text-slate-400" />
                 <a
                   href="tel:+13466346646"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
@@ -112,7 +112,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-blue-400 mt-1" />
+                <MapPin className="h-5 w-5 text-slate-400 mt-1" />
                 <span className="text-gray-300">
                   19247 Goodnight Peak Trl<br />
                   Cypress, TX 77433
@@ -123,7 +123,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
+        <div className="border-t border-slate-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
               © 2024 Teranotion. All rights reserved.

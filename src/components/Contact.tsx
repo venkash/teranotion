@@ -86,24 +86,24 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-gradient-to-br from-white via-slate-50 to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Start Your AI Journey
+            Let's Transform Your Business Together
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to revolutionize your business with SAP's cloud and AI technologies? 
-            Let's explore how intelligent automation can transform your operations.
+            Ready to unlock the power of SAP cloud and AI? Let's discuss how our proven 
+            solutions can accelerate your digital transformation and drive measurable results.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Form */}
-          <div className="bg-gray-50 rounded-2xl p-8">
+          <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
-              Discuss Your AI Strategy
+              Start Your Transformation Journey
             </h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -208,9 +208,9 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium flex items-center justify-center"
+                className="w-full bg-gradient-to-r from-slate-700 to-slate-800 text-white py-4 px-6 rounded-lg hover:from-slate-800 hover:to-slate-900 transition-all duration-200 font-medium flex items-center justify-center shadow-lg hover:shadow-xl"
               >
-                Start Conversation
+                Send Message
                 <Send className="ml-2 h-5 w-5" />
               </button>
             </form>
@@ -219,14 +219,14 @@ const Contact = () => {
           {/* Contact Information */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-8">
-              Connect With Our AI Experts
+              Connect With Our SAP Experts
             </h3>
 
             <div className="space-y-6 mb-8">
               {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="bg-blue-100 p-3 rounded-lg">
-                    <info.icon className="h-6 w-6 text-blue-600" />
+                <div key={index} className="flex items-start space-x-4 group">
+                  <div className="bg-gradient-to-r from-slate-600 to-slate-700 p-3 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <info.icon className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">
@@ -234,7 +234,7 @@ const Contact = () => {
                     </h4>
                     <a
                       href={info.link}
-                      className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                      className="text-gray-600 hover:text-slate-700 transition-colors duration-200"
                     >
                       {info.value}
                     </a>
@@ -244,9 +244,9 @@ const Contact = () => {
             </div>
 
             {/* Business Hours */}
-            <div className="bg-blue-50 rounded-lg p-6 mb-8">
+            <div className="bg-gradient-to-r from-slate-50 to-gray-50 rounded-xl p-6 mb-8 border border-gray-200">
               <div className="flex items-center space-x-3 mb-4">
-                <Clock className="h-6 w-6 text-blue-600" />
+                <Clock className="h-6 w-6 text-slate-600" />
                 <h4 className="font-semibold text-gray-900">Business Hours</h4>
               </div>
               <div className="space-y-2 text-gray-600">
@@ -266,13 +266,13 @@ const Contact = () => {
             </div>
 
             {/* Response Time */}
-            <div className="bg-green-50 rounded-lg p-6">
-              <h4 className="font-semibold text-green-800 mb-2">
-                AI Consultation Available
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200">
+              <h4 className="font-semibold text-blue-800 mb-2">
+                Free SAP Assessment Available
               </h4>
-              <p className="text-green-700">
-                Schedule a free consultation to explore how SAP's AI and cloud solutions 
-                can transform your business processes.
+              <p className="text-blue-700">
+                Get a complimentary assessment of your current SAP landscape and 
+                discover transformation opportunities.
               </p>
             </div>
           </div>

@@ -96,7 +96,7 @@ const WhatWeDo = () => {
               className="block"
             >
               <div
-              className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 ${getColorClasses(area.color)} p-8`}
+              className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 ${getColorClasses(area.color)} p-8 h-full flex flex-col`}
             >
               {/* Icon */}
               <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${area.gradient} flex items-center justify-center mb-6`}>
@@ -140,7 +140,7 @@ const WhatWeDo = () => {
               </div>
 
               {/* CTA Button */}
-              <div className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-200 flex items-center justify-center ${getButtonColor(area.gradient)} cursor-pointer`}>
+              <div className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-200 flex items-center justify-center ${getButtonColor(area.gradient)} cursor-pointer mt-auto`}>
                 Learn More
                 <ArrowRight className="ml-2 h-5 w-5" />
               </div>
@@ -151,7 +151,7 @@ const WhatWeDo = () => {
 
         {/* Bottom CTA */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-700 to-blue-800 rounded-2xl p-12 text-white">
+          <div className="bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl p-12 text-white shadow-2xl">
             <h3 className="text-3xl font-bold mb-4">
               Ready to Transform Your Business?
             </h3>
@@ -161,14 +161,14 @@ const WhatWeDo = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact"
-                className="bg-white text-blue-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+                className="bg-white text-slate-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center shadow-lg hover:shadow-xl"
               >
                 <TrendingUp className="mr-2 h-5 w-5" />
                 Start Your Transformation
               </a>
               <a
                 href="#services"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-700 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-slate-700 transition-colors duration-200 font-medium inline-flex items-center justify-center"
               >
                 Explore Our Solutions
                 <ArrowRight className="ml-2 h-5 w-5" />

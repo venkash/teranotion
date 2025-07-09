@@ -6,17 +6,20 @@ const About = () => {
     {
       icon: Award,
       title: 'SAP Certified Partners',
-      description: 'Official SAP Gold Partner with certified consultants'
+      description: 'Official SAP Gold Partner with certified consultants',
+      color: 'from-slate-600 to-slate-700'
     },
     {
       icon: Users,
       title: '50+ Expert Consultants',
-      description: 'Team of specialized SAP professionals'
+      description: 'Team of specialized SAP professionals',
+      color: 'from-blue-600 to-blue-700'
     },
     {
       icon: Globe,
       title: 'Global Reach',
-      description: 'Serving clients across 25+ countries'
+      description: 'Serving clients across 25+ countries',
+      color: 'from-indigo-600 to-indigo-700'
     }
   ];
 
@@ -32,26 +35,26 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
           <div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Pioneering SAP Cloud & AI Innovation
+              Your Trusted SAP Cloud & AI Partner
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              At the forefront of SAP's cloud and AI revolution, we help organizations harness 
-              the power of intelligent automation and cloud-native analytics. Our expertise spans 
-              the entire SAP Business Technology Platform ecosystem, delivering transformative solutions.
+              With 18+ years of SAP expertise, we're at the forefront of cloud and AI innovation. 
+              We help organizations harness intelligent automation and cloud-native analytics to 
+              drive measurable business transformation across the entire SAP ecosystem.
             </p>
 
             {/* Achievements */}
             <div className="space-y-6 mb-8">
               {achievements.map((achievement, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="bg-blue-100 p-3 rounded-lg">
-                    <achievement.icon className="h-6 w-6 text-blue-600" />
+                <div key={index} className="flex items-start space-x-4 group">
+                  <div className={`bg-gradient-to-r ${achievement.color} p-3 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+                    <achievement.icon className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">
@@ -68,12 +71,12 @@ const About = () => {
             {/* Expertise Grid */}
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Our Expertise
+                Core Expertise Areas
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 {expertise.map((skill, index) => (
                   <div key={index} className="flex items-center space-x-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
+                    <CheckCircle className="h-5 w-5 text-slate-600" />
                     <span className="text-gray-700">{skill}</span>
                   </div>
                 ))}
@@ -83,7 +86,7 @@ const About = () => {
 
           {/* Right Column - Visual */}
           <div className="relative">
-            <div className="bg-white rounded-2xl shadow-xl p-8">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 backdrop-blur-sm bg-opacity-95">
               <img
                 src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Our Team"
@@ -93,29 +96,29 @@ const About = () => {
               {/* Stats */}
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
+                  <div className="text-3xl font-bold text-slate-700 mb-2">500+</div>
                   <div className="text-sm text-gray-600">Projects Delivered</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-teal-600 mb-2">15+</div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">18+</div>
+                  <div className="text-sm text-gray-600">Years SAP Expertise</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-orange-600 mb-2">99%</div>
+                  <div className="text-3xl font-bold text-indigo-600 mb-2">99%</div>
                   <div className="text-sm text-gray-600">Success Rate</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">24/7</div>
+                  <div className="text-3xl font-bold text-gray-600 mb-2">24/7</div>
                   <div className="text-sm text-gray-600">Support</div>
                 </div>
               </div>
             </div>
 
             {/* Certifications */}
-            <div className="mt-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-6 text-white">
-              <h3 className="text-xl font-bold mb-2">SAP Cloud & AI Specialist</h3>
+            <div className="mt-8 bg-gradient-to-r from-slate-700 to-slate-800 rounded-xl p-6 text-white shadow-xl">
+              <h3 className="text-xl font-bold mb-2">SAP Gold Partner & AI Specialist</h3>
               <p className="opacity-90">
-                Certified in SAP Business Technology Platform and AI solutions
+                Certified across the complete SAP Business Technology Platform ecosystem
               </p>
             </div>
           </div>

@@ -411,7 +411,7 @@ const ContentManagement = () => {
   const filteredContent = content.filter(item => item.type === activeTab);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
@@ -425,9 +425,9 @@ const ContentManagement = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`flex items-center px-6 py-3 mx-2 mb-2 rounded-lg font-medium transition-colors duration-200 ${
+              className={`flex items-center px-6 py-3 mx-2 mb-2 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow-md ${
                 activeTab === tab.id
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-gradient-to-r from-slate-700 to-slate-800 text-white shadow-lg'
                   : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
             >
@@ -441,7 +441,7 @@ const ContentManagement = () => {
         <div className="mb-8">
           <button
             onClick={() => setShowCreateModal(true)}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium flex items-center"
+            className="bg-gradient-to-r from-slate-700 to-slate-800 text-white px-6 py-3 rounded-lg hover:from-slate-800 hover:to-slate-900 transition-all duration-200 font-medium flex items-center shadow-lg hover:shadow-xl"
           >
             <Plus className="h-5 w-5 mr-2" />
             Create New {tabs.find(t => t.id === activeTab)?.label.slice(0, -1)}

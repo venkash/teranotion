@@ -35,7 +35,7 @@ const BlogPost = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50">
       {/* Hero Section */}
       <div className="bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -88,7 +88,7 @@ const BlogPost = () => {
           )}
 
           {/* Excerpt */}
-          <div className="text-xl text-gray-600 leading-relaxed mb-8 p-6 bg-gray-50 rounded-xl border-l-4 border-blue-500">
+          <div className="text-xl text-gray-600 leading-relaxed mb-8 p-6 bg-gradient-to-r from-slate-50 to-gray-50 rounded-xl border-l-4 border-slate-500">
             {post.excerpt}
           </div>
         </div>
@@ -160,7 +160,7 @@ const BlogPost = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white text-center">
+        <div className="mt-16 bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl p-8 text-white text-center shadow-2xl">
           <h3 className="text-2xl font-bold mb-4">
             Ready to Transform Your Business?
           </h3>
@@ -169,7 +169,7 @@ const BlogPost = () => {
           </p>
           <Link
             to="/#contact"
-            className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-block"
+            className="bg-white text-slate-700 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-block shadow-lg hover:shadow-xl"
           >
             Get Started Today
           </Link>
