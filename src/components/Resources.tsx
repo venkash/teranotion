@@ -12,7 +12,8 @@ import {
   Filter,
   Search,
   Eye,
-  ArrowRight
+  ArrowRight,
+  X
 } from 'lucide-react';
 import { format } from 'date-fns';
 import { blogPosts, newsletters, externalLinks, videos, categories } from '../data/contentData';
@@ -21,6 +22,8 @@ const Resources = () => {
   const [activeTab, setActiveTab] = useState<'blog' | 'newsletters' | 'links' | 'videos'>('blog');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedVideo, setSelectedVideo] = useState<any>(null);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   const tabs = [
     { id: 'blog', label: 'Blog Posts', icon: BookOpen, count: blogPosts.length },
@@ -51,6 +54,16 @@ const Resources = () => {
         (item.tags && item.tags.some((tag: string) => tag.toLowerCase().includes(searchTerm.toLowerCase())));
       return matchesCategory && matchesSearch;
     });
+  };
+
+  const openVideoModal = (video: any) => {
+    setSelectedVideo(video);
+    setIsVideoModalOpen(true);
+  };
+
+  const closeVideoModal = () => {
+    setSelectedVideo(null);
+    setIsVideoModalOpen(false);
   };
 
   const renderBlogPosts = () => {
@@ -219,7 +232,11 @@ const Resources = () => {
     return (
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredVideos.map((video) => (
-          <div key={video.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+          <div 
+            key={video.id} 
+            className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
+            onClick={() => openVideoModal(video)}
+          >
             <div className="relative aspect-video overflow-hidden">
               <img
                 src={video.thumbnailUrl}
@@ -378,6 +395,66 @@ const Resources = () => {
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {isVideoModalOpen && selectedVideo && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900">{selectedVideo.title}</h3>
+              <button
+                onClick={closeVideoModal}
+                className="text-gray-400 hover:text-gray-600 transition-colors"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            {/* Video Player */}
+            <div className="p-6">
+              <div className="aspect-video mb-6">
+                <iframe
+                  src={selectedVideo.videoUrl}
+                  title={selectedVideo.title}
+                  className="w-full h-full rounded-lg"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+
+              {/* Video Info */}
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(selectedVideo.category)}`}>
+                    {categories.find(c => c.id === selectedVideo.category)?.name}
+                  </span>
+                  <div className="flex items-center text-gray-500 text-sm">
+                    <Calendar className="h-4 w-4 mr-1" />
+                    {format(selectedVideo.addedAt, 'MMM dd, yyyy')}
+                  </div>
+                </div>
+
+                <p className="text-gray-600 leading-relaxed">
+                  {selectedVideo.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {selectedVideo.tags.map((tag: string) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
