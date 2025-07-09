@@ -97,6 +97,7 @@ const About = () => {
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-emerald-400 mb-2">18+</div>
+                </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-indigo-400 mb-2">BTP</div>
                   <div className="text-sm text-gray-300">Platform Certified</div>
@@ -105,19 +106,14 @@ const About = () => {
                   <div className="text-3xl font-bold text-indigo-400 mb-2">Cloud</div>
                   <div className="text-sm text-gray-300">Native Solutions</div>
                 </div>
-              <h4 className="font-semibold text-white mb-2">Cloud-Native Foundation</h4>
-              <p className="text-sm text-gray-300">Multi-cloud infrastructure with enterprise security and compliance</p>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-indigo-400 mb-2">24/7</div>
-              <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="h-8 w-8 text-purple-600" />
+                </div>
+              </div>
+              <h4 className="font-semibold text-white mb-2">Cloud-Native Foundation</h4>
+              <p className="text-sm text-gray-300">Multi-cloud infrastructure with enterprise security and compliance</p>
               <h4 className="font-semibold text-white mb-2">AI-First Approach</h4>
               <p className="text-sm text-gray-300">Embedded intelligence and automation in every solution we deliver</p>
-
-            {/* Certifications */}
-              <div className="bg-slate-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Workflow className="h-8 w-8 text-slate-600" />
-              <p className="opacity-90">
               <h4 className="font-semibold text-white mb-2">Proven Integration</h4>
               <p className="text-sm text-gray-300">Seamless connectivity across SAP and non-SAP systems</p>
             </div>
