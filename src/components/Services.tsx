@@ -25,7 +25,7 @@ const Services = () => {
         'Semantic modeling layer',
         'Advanced data governance'
       ],
-      color: 'blue',
+      color: 'slate',
       category: 'Data Foundation'
     },
     {
@@ -39,7 +39,7 @@ const Services = () => {
         'Context-aware decision making',
         'Continuous learning'
       ],
-      color: 'indigo',
+      color: 'blue',
       category: 'AI & Automation'
     },
     {
@@ -53,7 +53,7 @@ const Services = () => {
         'Collaborative planning',
         'Natural language queries'
       ],
-      color: 'teal',
+      color: 'gray',
       category: 'Analytics & Insights'
     },
     {
@@ -67,49 +67,49 @@ const Services = () => {
         'Drag-and-drop interface',
         'Enterprise security & governance'
       ],
-      color: 'green',
+      color: 'emerald',
       category: 'Integration & Development'
     }
   ];
 
   const getColorClasses = (color: string) => {
     const colors = {
+      slate: 'bg-slate-50 text-slate-600 group-hover:bg-slate-600',
       blue: 'bg-blue-50 text-blue-600 group-hover:bg-blue-600',
-      indigo: 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600',
-      teal: 'bg-teal-50 text-teal-600 group-hover:bg-teal-600',
-      green: 'bg-green-50 text-green-600 group-hover:bg-green-600'
+      gray: 'bg-gray-50 text-gray-600 group-hover:bg-gray-600',
+      emerald: 'bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600'
     };
-    return colors[color as keyof typeof colors] || colors.blue;
+    return colors[color as keyof typeof colors] || colors.slate;
   };
 
   const getBorderColor = (color: string) => {
     const colors = {
+      slate: 'border-slate-200 hover:border-slate-300',
       blue: 'border-blue-200 hover:border-blue-300',
-      indigo: 'border-indigo-200 hover:border-indigo-300',
-      teal: 'border-teal-200 hover:border-teal-300',
-      green: 'border-green-200 hover:border-green-300'
+      gray: 'border-gray-200 hover:border-gray-300',
+      emerald: 'border-emerald-200 hover:border-emerald-300'
     };
-    return colors[color as keyof typeof colors] || colors.blue;
+    return colors[color as keyof typeof colors] || colors.slate;
   };
 
   const getAccentColor = (color: string) => {
     const colors = {
+      slate: 'text-slate-600',
       blue: 'text-blue-600',
-      indigo: 'text-indigo-600',
-      teal: 'text-teal-600',
-      green: 'text-green-600'
+      gray: 'text-gray-600',
+      emerald: 'text-emerald-600'
     };
-    return colors[color as keyof typeof colors] || colors.blue;
+    return colors[color as keyof typeof colors] || colors.slate;
   };
 
   const getCategoryColor = (color: string) => {
     const colors = {
+      slate: 'bg-slate-100 text-slate-800',
       blue: 'bg-blue-100 text-blue-800',
-      indigo: 'bg-indigo-100 text-indigo-800',
-      teal: 'bg-teal-100 text-teal-800',
-      green: 'bg-green-100 text-green-800'
+      gray: 'bg-gray-100 text-gray-800',
+      emerald: 'bg-emerald-100 text-emerald-800'
     };
-    return colors[color as keyof typeof colors] || colors.blue;
+    return colors[color as keyof typeof colors] || colors.slate;
   };
 
   return (
@@ -178,7 +178,7 @@ const Services = () => {
         </div>
 
         {/* Technology Foundation */}
-        <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 md:p-12 mb-16">
+        <div className="bg-gradient-to-br from-slate-50 to-gray-50 rounded-2xl p-8 md:p-12 mb-16">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Built on SAP Business Technology Platform
@@ -191,22 +191,22 @@ const Services = () => {
           
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Cloud className="h-8 w-8 text-blue-600" />
+              <div className="bg-slate-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Cloud className="h-8 w-8 text-slate-600" />
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">Cloud-Native Foundation</h4>
               <p className="text-sm text-gray-600">Multi-cloud infrastructure with enterprise security and compliance</p>
             </div>
             <div>
-              <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="h-8 w-8 text-indigo-600" />
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Zap className="h-8 w-8 text-blue-600" />
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">AI-First Approach</h4>
               <p className="text-sm text-gray-600">Embedded intelligence and automation in every solution we deliver</p>
             </div>
             <div>
-              <div className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Workflow className="h-8 w-8 text-teal-600" />
+              <div className="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Workflow className="h-8 w-8 text-emerald-600" />
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">Proven Integration</h4>
               <p className="text-sm text-gray-600">Seamless connectivity across SAP and non-SAP systems</p>
@@ -216,7 +216,7 @@ const Services = () => {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-12 text-white">
+          <div className="bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl p-12 text-white">
             <h3 className="text-3xl font-bold mb-4">
               Ready to Transform Your Enterprise?
             </h3>
@@ -227,14 +227,14 @@ const Services = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact"
-                className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+                className="bg-white text-slate-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center"
               >
                 Schedule Consultation
                 <Zap className="ml-2 h-5 w-5" />
               </a>
               <a
                 href="#about"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-slate-700 transition-colors duration-200 font-medium inline-flex items-center justify-center"
               >
                 Learn About Us
                 <ArrowRight className="ml-2 h-5 w-5" />

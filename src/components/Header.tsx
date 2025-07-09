@@ -20,7 +20,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <Logo className="h-8 w-8 text-blue-600" />
+            <Logo className="h-8 w-8 text-slate-700" />
             <span className="text-2xl font-bold text-gray-900">Teranotion</span>
           </Link>
 
@@ -31,7 +31,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 px-3 py-2 transition-colors duration-200 font-medium"
+                  className="text-gray-700 hover:text-slate-700 px-3 py-2 transition-colors duration-200 font-medium"
                 >
                   {item.name}
                 </a>
@@ -39,7 +39,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="text-gray-700 hover:text-blue-600 px-3 py-2 transition-colors duration-200 font-medium"
+                  className="text-gray-700 hover:text-slate-700 px-3 py-2 transition-colors duration-200 font-medium"
                 >
                   {item.name}
                 </Link>
@@ -51,7 +51,7 @@ const Header = () => {
           <div className="hidden md:flex">
             <a
               href="/#contact"
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
+              className="bg-slate-700 text-white px-6 py-2 rounded-lg hover:bg-slate-800 transition-colors duration-200 font-medium"
             >
               Get Started
             </a>
@@ -79,7 +79,7 @@ const Header = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-gray-700 hover:text-blue-600 px-3 py-2 transition-colors duration-200 font-medium"
+                    className="text-gray-700 hover:text-slate-700 px-3 py-2 transition-colors duration-200 font-medium"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -88,7 +88,7 @@ const Header = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className="text-gray-700 hover:text-blue-600 px-3 py-2 transition-colors duration-200 font-medium"
+                    className="text-gray-700 hover:text-slate-700 px-3 py-2 transition-colors duration-200 font-medium"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -97,7 +97,7 @@ const Header = () => {
               ))}
               <a
                 href="/#contact"
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium text-center mt-4"
+                className="bg-slate-700 text-white px-6 py-2 rounded-lg hover:bg-slate-800 transition-colors duration-200 font-medium text-center mt-4"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Get Started

@@ -15,8 +15,8 @@ const WhatWeDo = () => {
         'AI-powered insights and recommendations'
       ],
       tools: ['SAP Business Data Cloud', 'SAP Analytics Cloud', 'SAP HANA Cloud'],
-      color: 'blue',
-      gradient: 'from-blue-500 to-blue-600'
+      color: 'slate',
+      gradient: 'from-slate-600 to-slate-700'
     },
     {
       id: 'digital-transformation',
@@ -30,8 +30,8 @@ const WhatWeDo = () => {
         'Citizen developer enablement'
       ],
       tools: ['SAP Build Platform', 'SAP Integration Suite', 'SAP Process Automation'],
-      color: 'green',
-      gradient: 'from-green-500 to-green-600'
+      color: 'emerald',
+      gradient: 'from-emerald-600 to-emerald-700'
     },
     {
       id: 'ai-foundation',
@@ -45,27 +45,27 @@ const WhatWeDo = () => {
         'Conversational AI and natural language processing'
       ],
       tools: ['SAP AI Core', 'Joule Framework', 'SAP AI Business Services'],
-      color: 'purple',
-      gradient: 'from-purple-500 to-purple-600'
+      color: 'blue',
+      gradient: 'from-blue-600 to-blue-700'
     }
   ];
 
   const getColorClasses = (color: string) => {
     const colors = {
-      blue: 'bg-blue-50 border-blue-200 hover:border-blue-300',
-      green: 'bg-green-50 border-green-200 hover:border-green-300',
-      purple: 'bg-purple-50 border-purple-200 hover:border-purple-300'
+      slate: 'bg-slate-50 border-slate-200 hover:border-slate-300',
+      emerald: 'bg-emerald-50 border-emerald-200 hover:border-emerald-300',
+      blue: 'bg-blue-50 border-blue-200 hover:border-blue-300'
     };
-    return colors[color as keyof typeof colors] || colors.blue;
+    return colors[color as keyof typeof colors] || colors.slate;
   };
 
   const getIconColor = (color: string) => {
     const colors = {
+      slate: 'text-slate-600',
+      emerald: 'text-emerald-600',
       blue: 'text-blue-600',
-      green: 'text-green-600',
-      purple: 'text-purple-600'
     };
-    return colors[color as keyof typeof colors] || colors.blue;
+    return colors[color as keyof typeof colors] || colors.slate;
   };
 
   const getButtonColor = (gradient: string) => {
@@ -77,7 +77,7 @@ const WhatWeDo = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm font-medium mb-6">
             <TrendingUp className="h-4 w-4 mr-2" />
             Our Core Transformation Areas
           </div>
@@ -130,11 +130,7 @@ const WhatWeDo = () => {
                   {area.tools.map((tool, toolIndex) => (
                     <span
                       key={toolIndex}
-                      className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        area.color === 'blue' ? 'bg-blue-100 text-blue-800' :
-                        area.color === 'green' ? 'bg-green-100 text-green-800' :
-                        'bg-purple-100 text-purple-800'
-                      }`}
+                      className={`px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700`}
                     >
                       {tool}
                     </span>
@@ -156,7 +152,7 @@ const WhatWeDo = () => {
 
         {/* Bottom CTA */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-12 text-white">
+          <div className="bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl p-12 text-white">
             <h3 className="text-3xl font-bold mb-4">
               Ready to Transform Your Business?
             </h3>
@@ -166,14 +162,14 @@ const WhatWeDo = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact"
-                className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+                className="bg-white text-slate-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center"
               >
                 <TrendingUp className="mr-2 h-5 w-5" />
                 Start Your Transformation
               </a>
               <a
                 href="#services"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-200 font-medium inline-flex items-center justify-center"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-slate-700 transition-colors duration-200 font-medium inline-flex items-center justify-center"
               >
                 Explore Our Solutions
                 <ArrowRight className="ml-2 h-5 w-5" />

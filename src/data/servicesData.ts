@@ -39,7 +39,7 @@ export const servicesData = [
       'SAP Datasphere - Data fabric foundation',
       'SAP Analytics Cloud - Embedded analytics'
     ],
-    color: 'blue'
+    color: 'slate'
   },
   {
     id: 'ai-agents-automation',
@@ -81,7 +81,7 @@ export const servicesData = [
       'SAP Process Automation - Workflow orchestration',
       'SAP AI Core - Machine learning platform'
     ],
-    color: 'indigo'
+    color: 'blue'
   },
   {
     id: 'sap-analytics-cloud',
@@ -123,7 +123,7 @@ export const servicesData = [
       'SAP Smart Insights - Automated insight generation',
       'SAP Digital Boardroom - Executive decision support'
     ],
-    color: 'teal'
+    color: 'gray'
   },
   {
     id: 'sap-build-integration',
@@ -165,6 +165,6 @@ export const servicesData = [
       'SAP Mobile Services - Mobile app development',
       'SAP Extension Suite - Application extension platform'
     ],
-    color: 'green'
+    color: 'emerald'
   }
 ];

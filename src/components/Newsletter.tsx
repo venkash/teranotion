@@ -45,7 +45,7 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
+    <section className="py-20 bg-gradient-to-r from-slate-700 via-slate-800 to-gray-800">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 md:p-12">
           <div className="flex justify-center mb-6">
@@ -87,12 +87,12 @@ const Newsletter = () => {
                 />
                 <button
                   type="submit"
-                  className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-white text-slate-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={isLoading}
                 >
                   {isLoading ? (
                     <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600 mr-2"></div>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-slate-600 mr-2"></div>
                       Subscribing...
                     </>
                   ) : (
@@ -130,7 +130,7 @@ const Newsletter = () => {
           <div className="mt-8 pt-8 border-t border-white border-opacity-20">
             <a
               href="#contact"
-              className="inline-flex items-center border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-200 font-medium"
+              className="inline-flex items-center border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-slate-700 transition-colors duration-200 font-medium"
             >
               Let's Talk
             </a>
