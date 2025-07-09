@@ -3,7 +3,7 @@ export const servicesData = [
     id: 'sap-business-data-cloud',
     icon: 'Database',
     title: 'SAP Business Data Cloud',
-    shortDescription: 'Unified, scalable architecture to manage data across SAP and non-SAP sources with real-time federation.',
+    shortDescription: 'Unified, scalable architecture to manage data across SAP and non-SAP sources with real-time federation and zero-ETL approach.',
     fullDescription: 'SAP Business Data Cloud (BDC), announced at SAP Sapphire 2024, represents the evolution of Datasphere and SAP\'s comprehensive data fabric vision. This enterprise-grade platform unifies data management, real-time analytics, and intelligent automation across your entire business ecosystem, built for scale and performance with advanced security.',
     features: [
       'Real-time data streaming & processing with sub-second latency',
@@ -45,7 +45,7 @@ export const servicesData = [
     id: 'ai-agents-automation',
     icon: 'Bot',
     title: 'AI Agents (Joule Framework)',
-    shortDescription: 'Custom, enterprise-grade AI agents built on SAP\'s Joule AI framework to automate tasks and decisions.',
+    shortDescription: 'Custom, enterprise-grade AI agents built on SAP\'s Joule AI framework for intelligent process automation.',
     fullDescription: 'Intelligent AI agents powered by SAP Joule that understand business context, learn from interactions, and autonomously execute complex business processes while continuously improving performance through machine learning. These agents integrate seamlessly with your existing SAP landscape to deliver intelligent automation at scale.',
     features: [
       'Conversational AI with advanced natural language processing',
@@ -86,9 +86,9 @@ export const servicesData = [
   {
     id: 'sap-analytics-cloud',
     icon: 'BarChart3',
-    title: 'Data & Analytics Modernization',
-    shortDescription: 'From reporting to predictive insights with SAP Datasphere, SAC, and S/4 integration.',
-    fullDescription: 'Comprehensive data and analytics modernization that transforms traditional reporting into intelligent, predictive insights. Our approach combines SAP Analytics Cloud, Datasphere, and S/4HANA integration to create a unified analytics ecosystem that empowers data-driven decision making across your organization.',
+    title: 'SAP Analytics Cloud',
+    shortDescription: 'Next-generation analytics platform with embedded AI for augmented analytics, planning, and predictive insights.',
+    fullDescription: 'Comprehensive analytics modernization that transforms traditional reporting into intelligent, predictive insights. Our approach combines SAP Analytics Cloud with embedded AI to create a unified analytics ecosystem that empowers data-driven decision making across your organization with self-service capabilities and collaborative planning.',
     features: [
       'Augmented analytics with embedded AI and machine learning',
       'Smart insights and automated anomaly detection',
@@ -126,52 +126,10 @@ export const servicesData = [
     color: 'teal'
   },
   {
-    id: 'sap-ai-core-foundation',
-    icon: 'Brain',
-    title: 'SAP AI Core & Foundation',
-    shortDescription: 'Comprehensive enterprise AI platform for building, training, and deploying ML models at scale.',
-    fullDescription: 'Enterprise-grade AI platform that provides comprehensive machine learning operations (MLOps) capabilities for building, training, deploying, and managing AI models at scale. Built on SAP\'s Business Technology Platform with integrated governance, security, and lifecycle management for production AI deployments.',
-    features: [
-      'Complete ML model lifecycle management from development to retirement',
-      'Vector databases and embeddings for advanced AI applications',
-      'Generative AI integration with large language models',
-      'AutoML capabilities for citizen data scientists',
-      'Model versioning, rollback, and governance controls',
-      'A/B testing framework for model performance optimization',
-      'Scalable model serving with auto-scaling capabilities',
-      'Integration with SAP business applications and data sources'
-    ],
-    benefits: [
-      'Deploy AI models 10x faster with automated MLOps pipelines',
-      'Reduce AI development costs by 60% with reusable components',
-      'Ensure model reliability and governance with built-in controls',
-      'Scale AI initiatives across the enterprise with centralized platform',
-      'Accelerate time-to-value with pre-built AI services',
-      'Maintain compliance with audit trails and model explainability'
-    ],
-    useCases: [
-      'Predictive maintenance for manufacturing equipment',
-      'Fraud detection systems for financial transactions',
-      'Demand forecasting for supply chain optimization',
-      'Personalization engines for customer experience',
-      'Document processing and intelligent automation',
-      'Quality control and defect detection in production'
-    ],
-    technologies: [
-      'SAP AI Core - MLOps platform and model serving',
-      'SAP AI Launchpad - Model management and monitoring',
-      'SAP HANA ML - In-database machine learning',
-      'SAP Analytics Cloud Smart Predict - Predictive analytics',
-      'SAP Document Information Extraction - AI services',
-      'SAP Conversational AI - Natural language processing'
-    ],
-    color: 'orange'
-  },
-  {
     id: 'sap-build-integration',
     icon: 'Workflow',
     title: 'SAP Build & Integration',
-    shortDescription: 'Low-code/no-code platform for building intelligent applications and automating workflows.',
+    shortDescription: 'Low-code/no-code platform for building intelligent applications and automating workflows across the enterprise.',
     fullDescription: 'Comprehensive low-code/no-code platform that empowers citizen developers and IT professionals to rapidly build intelligent applications, automate complex workflows, and integrate cloud services without extensive coding. Built on SAP Business Technology Platform with enterprise-grade security and governance.',
     features: [
       'Visual workflow designer with drag-and-drop interface',
