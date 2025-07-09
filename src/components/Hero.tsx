@@ -64,9 +64,9 @@ const Hero = () => {
             <div className="absolute -bottom-8 -right-4 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse delay-1000"></div>
             
             <div className="relative z-10">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
-                Transform Your Enterprise with
-                <span className="text-blue-700 block mt-2">SAP Cloud & AI Solutions</span>
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
+                <span className="text-2xl md:text-3xl">Transform Your Enterprise with</span>
+                <span className="text-blue-700 block mt-2 text-4xl md:text-5xl">SAP Business Data Cloud & AI Solutions</span>
               </h1>
               
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
