@@ -22,10 +22,6 @@ const Resources = () => {
   const [activeTab, setActiveTab] = useState<'blog' | 'newsletters' | 'links' | 'videos'>('blog');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedVideo, setSelectedVideo] = useState<any>(null);
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-
-  const [videoError, setVideoError] = useState(false);
 
   const tabs = [
     { id: 'blog', label: 'Blog Posts', icon: BookOpen, count: blogPosts.length },
@@ -58,15 +54,14 @@ const Resources = () => {
     });
   };
 
-  const openVideoModal = (video: any) => {
-    setSelectedVideo(video);
-    setIsVideoModalOpen(true);
-    setVideoError(false);
-  };
-
-  const closeVideoModal = () => {
-    setSelectedVideo(null);
-    setIsVideoModalOpen(false);
+  const openVideoExternal = (video: any) => {
+    // Convert embed URL to watch URL
+    let watchUrl = video.videoUrl;
+    if (watchUrl.includes('/embed/')) {
+      const videoId = watchUrl.split('/embed/')[1].split('?')[0];
+      watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
+    }
+    window.open(watchUrl, '_blank', 'noopener,noreferrer');
   };
 
   const renderBlogPosts = () => {
@@ -238,7 +233,7 @@ const Resources = () => {
           <div 
             key={video.id} 
             className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
-            onClick={() => openVideoModal(video)}
+            onClick={() => openVideoExternal(video)}
           >
             <div className="relative aspect-video overflow-hidden">
               <img
@@ -247,8 +242,9 @@ const Resources = () => {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="bg-white bg-opacity-90 rounded-full p-4">
-                  <Play className="h-8 w-8 text-blue-600" />
+                <div className="bg-white bg-opacity-90 rounded-full p-4 flex items-center space-x-2">
+                  <Play className="h-6 w-6 text-blue-600" />
+                  <ExternalLink className="h-5 w-5 text-blue-600" />
                 </div>
               </div>
               {video.duration && (
@@ -276,6 +272,9 @@ const Resources = () => {
               <div className="flex items-center text-gray-500 text-sm mb-4">
                 <Calendar className="h-4 w-4 mr-1" />
                 {format(video.addedAt, 'MMM dd, yyyy')}
+                <span className="mx-2">•</span>
+                <ExternalLink className="h-4 w-4 mr-1" />
+                Opens in YouTube
               </div>
               <div className="flex flex-wrap gap-2">
                 {video.tags.slice(0, 3).map((tag) => (
@@ -398,87 +397,6 @@ const Resources = () => {
           </div>
         </div>
       </div>
-
-      {/* Video Modal */}
-      {isVideoModalOpen && selectedVideo && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            {/* Modal Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200">
-              <h3 className="text-xl font-bold text-gray-900">{selectedVideo.title}</h3>
-              <button
-                onClick={closeVideoModal}
-                className="text-gray-400 hover:text-gray-600 transition-colors"
-              >
-                <X className="h-6 w-6" />
-              </button>
-            </div>
-
-            {/* Video Player */}
-            <div className="p-6">
-              <div className="aspect-video mb-6 bg-gray-100 rounded-lg overflow-hidden">
-                {!videoError ? (
-                  <iframe
-                    src={selectedVideo.videoUrl}
-                    title={selectedVideo.title}
-                    className="w-full h-full"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    onError={() => setVideoError(true)}
-                    sandbox="allow-same-origin allow-scripts allow-popups allow-presentation"
-                  ></iframe>
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gray-100">
-                    <div className="text-center p-8">
-                      <Play className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                      <h3 className="text-lg font-medium text-gray-900 mb-2">Video Unavailable</h3>
-                      <p className="text-gray-600 mb-4">This video cannot be embedded. Click below to watch on YouTube.</p>
-                      <a
-                        href={selectedVideo.videoUrl.replace('/embed/', '/watch?v=').split('?')[0]}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors duration-200 font-medium"
-                      >
-                        <ExternalLink className="h-5 w-5 mr-2" />
-                        Watch on YouTube
-                      </a>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Video Info */}
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(selectedVideo.category)}`}>
-                    {categories.find(c => c.id === selectedVideo.category)?.name}
-                  </span>
-                  <div className="flex items-center text-gray-500 text-sm">
-                    <Calendar className="h-4 w-4 mr-1" />
-                    {format(selectedVideo.addedAt, 'MMM dd, yyyy')}
-                  </div>
-                </div>
-
-                <p className="text-gray-600 leading-relaxed">
-                  {selectedVideo.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {selectedVideo.tags.map((tag: string) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
