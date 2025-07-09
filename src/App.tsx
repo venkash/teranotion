@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import WhatWeDo from './components/WhatWeDo';
-import SAPBusinessDataCloud from './components/SAPBusinessDataCloud';
 import AIAgents from './components/AIAgents';
 import Services from './components/Services';
 import About from './components/About';
@@ -25,7 +24,6 @@ function App() {
             <Hero />
             <WhatWeDo />
             <WhatWeDo />
-            <SAPBusinessDataCloud />
             <AIAgents />
             <Services />
             <About />
