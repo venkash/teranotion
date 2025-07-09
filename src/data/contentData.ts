@@ -163,9 +163,9 @@ export const newsletters: Newsletter[] = [
 export const externalLinks: ExternalLink[] = [
   {
     id: '1',
-    title: 'SAP Business Technology Platform Official Documentation',
-    description: 'Comprehensive documentation and developer resources for SAP BTP, including APIs, tutorials, and best practices.',
-    url: 'https://help.sap.com/docs/BTP',
+    title: 'SAP Help Portal - Business Technology Platform',
+    description: 'Official SAP documentation for Business Technology Platform, including setup guides, APIs, and best practices.',
+    url: 'https://help.sap.com/docs/btp',
     category: 'sap-cloud',
     addedAt: new Date('2024-01-18'),
     tags: ['Documentation', 'SAP BTP', 'Developer Resources'],
@@ -173,33 +173,83 @@ export const externalLinks: ExternalLink[] = [
   },
   {
     id: '2',
-    title: 'AI Ethics in Enterprise Applications',
-    description: 'Harvard Business Review article discussing the ethical considerations and frameworks for implementing AI in business environments.',
-    url: 'https://hbr.org/ai-ethics-enterprise',
+    title: 'SAP Community - AI and Machine Learning',
+    description: 'SAP Community hub for AI and machine learning discussions, tutorials, and best practices from experts.',
+    url: 'https://community.sap.com/topics/artificial-intelligence',
     category: 'ai-ml',
     addedAt: new Date('2024-01-16'),
-    tags: ['AI Ethics', 'Enterprise AI', 'Best Practices'],
+    tags: ['SAP Community', 'AI', 'Machine Learning'],
     thumbnail: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: '3',
-    title: 'Cloud Migration Strategies for Large Enterprises',
-    description: 'McKinsey report on successful cloud migration patterns and strategies for large-scale enterprise transformations.',
-    url: 'https://mckinsey.com/cloud-migration-strategies',
+    title: 'SAP Analytics Cloud Documentation',
+    description: 'Complete documentation for SAP Analytics Cloud including planning, analytics, and predictive capabilities.',
+    url: 'https://help.sap.com/docs/SAP_ANALYTICS_CLOUD',
     category: 'sap-cloud',
     addedAt: new Date('2024-01-14'),
-    tags: ['Cloud Migration', 'Enterprise Strategy', 'Digital Transformation'],
+    tags: ['SAP Analytics Cloud', 'Documentation', 'Business Intelligence'],
     thumbnail: 'https://images.pexels.com/photos/590018/pexels-photo-590018.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: '4',
-    title: 'The Future of Business Process Automation',
-    description: 'Gartner research on emerging trends in business process automation and the role of intelligent automation.',
-    url: 'https://gartner.com/business-process-automation-future',
+    title: 'SAP Build Platform Documentation',
+    description: 'Official documentation for SAP Build platform including low-code development and process automation.',
+    url: 'https://help.sap.com/docs/build-platform',
     category: 'automation',
     addedAt: new Date('2024-01-12'),
-    tags: ['Process Automation', 'Future Trends', 'Gartner Research'],
+    tags: ['SAP Build', 'Low-Code', 'Process Automation'],
     thumbnail: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400'
+  },
+  {
+    id: '5',
+    title: 'SAP Datasphere Documentation',
+    description: 'Comprehensive guide to SAP Datasphere for data fabric, data warehousing, and analytics.',
+    url: 'https://help.sap.com/docs/SAP_DATASPHERE',
+    category: 'analytics',
+    addedAt: new Date('2024-01-10'),
+    tags: ['SAP Datasphere', 'Data Fabric', 'Data Warehouse'],
+    thumbnail: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=400'
+  },
+  {
+    id: '6',
+    title: 'SAP AI Core Documentation',
+    description: 'Official documentation for SAP AI Core platform for machine learning operations and AI model management.',
+    url: 'https://help.sap.com/docs/AI_CORE',
+    category: 'ai-ml',
+    addedAt: new Date('2024-01-08'),
+    tags: ['SAP AI Core', 'MLOps', 'AI Platform'],
+    thumbnail: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=400'
+  },
+  {
+    id: '7',
+    title: 'SAP Integration Suite Documentation',
+    description: 'Complete guide to SAP Integration Suite for hybrid integration, API management, and event mesh.',
+    url: 'https://help.sap.com/docs/SAP_INTEGRATION_SUITE',
+    category: 'integration',
+    addedAt: new Date('2024-01-06'),
+    tags: ['SAP Integration Suite', 'API Management', 'Hybrid Integration'],
+    thumbnail: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400'
+  },
+  {
+    id: '8',
+    title: 'SAP Developer Center',
+    description: 'Central hub for SAP developers with tutorials, code samples, and development resources.',
+    url: 'https://developers.sap.com/',
+    category: 'sap-cloud',
+    addedAt: new Date('2024-01-04'),
+    tags: ['SAP Developers', 'Tutorials', 'Code Samples'],
+    thumbnail: 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=400'
+  },
+  {
+    id: '9',
+    title: 'SAP Learning Hub',
+    description: 'Official SAP learning platform with courses, certifications, and training materials.',
+    url: 'https://learning.sap.com/',
+    category: 'industry-insights',
+    addedAt: new Date('2024-01-02'),
+    tags: ['SAP Learning', 'Certification', 'Training'],
+    thumbnail: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=400'
   }
 ];
 
