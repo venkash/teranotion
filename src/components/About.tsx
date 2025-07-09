@@ -4,21 +4,21 @@ import { Award, Users, Globe, CheckCircle } from 'lucide-react';
 const About = () => {
   const achievements = [
     {
-      icon: Award,
-      title: 'SAP Certified Partners',
-      description: 'Official SAP Gold Partner with certified consultants',
-      color: 'from-blue-600 to-blue-700'
-    },
-    {
       icon: Users,
-      title: '50+ Expert Consultants',
+      title: 'Expert SAP Consultants',
       description: 'Team of specialized SAP professionals',
       color: 'from-blue-600 to-blue-700'
     },
     {
       icon: Globe,
       title: 'Global Reach',
-      description: 'Serving clients across 25+ countries',
+      description: 'Serving clients worldwide',
+      color: 'from-blue-600 to-blue-700'
+    },
+    {
+      icon: Award,
+      title: 'SAP Certified Excellence',
+      description: 'Certified across SAP Business Technology Platform',
       color: 'from-blue-600 to-blue-700'
     }
   ];
@@ -96,16 +96,16 @@ const About = () => {
               {/* Stats */}
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-700 mb-2">500+</div>
-                  <div className="text-sm text-gray-600">Projects Delivered</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">18+</div>
+                  <div className="text-3xl font-bold text-blue-700 mb-2">18+</div>
                   <div className="text-sm text-gray-600">Years SAP Expertise</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">99%</div>
-                  <div className="text-sm text-gray-600">Success Rate</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">BTP</div>
+                  <div className="text-sm text-gray-600">Platform Certified</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600 mb-2">Cloud</div>
+                  <div className="text-sm text-gray-600">Native Solutions</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
@@ -116,7 +116,7 @@ const About = () => {
 
             {/* Certifications */}
             <div className="mt-8 bg-gradient-to-r from-blue-700 to-blue-800 rounded-xl p-6 text-white shadow-xl">
-              <h3 className="text-xl font-bold mb-2">SAP Gold Partner & AI Specialist</h3>
+              <h3 className="text-xl font-bold mb-2">SAP Certified & AI Specialist</h3>
               <p className="opacity-90">
                 Certified across the complete SAP Business Technology Platform ecosystem
               </p>

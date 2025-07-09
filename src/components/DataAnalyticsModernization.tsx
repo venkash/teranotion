@@ -49,26 +49,22 @@ const DataAnalyticsModernization = () => {
     {
       step: '1',
       title: 'Data Assessment & Strategy',
-      description: 'Comprehensive analysis of your current data landscape and definition of target architecture',
-      timeline: '2-4 weeks'
+      description: 'Comprehensive analysis of your current data landscape and definition of target architecture'
     },
     {
       step: '2',
       title: 'Platform Setup & Configuration',
-      description: 'Deploy and configure SAP Business Data Cloud with proper security and governance',
-      timeline: '4-6 weeks'
+      description: 'Deploy and configure SAP Business Data Cloud with proper security and governance'
     },
     {
       step: '3',
       title: 'Data Integration & Migration',
-      description: 'Connect data sources and establish real-time data pipelines with semantic modeling',
-      timeline: '6-8 weeks'
+      description: 'Connect data sources and establish real-time data pipelines with semantic modeling'
     },
     {
       step: '4',
       title: 'Analytics Implementation',
-      description: 'Build self-service analytics capabilities and train business users',
-      timeline: '4-6 weeks'
+      description: 'Build self-service analytics capabilities and train business users'
     }
   ];
 
@@ -235,10 +231,7 @@ const DataAnalyticsModernization = () => {
                         {step.step}
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="font-bold text-gray-900">{step.title}</h3>
-                          <span className="text-sm text-blue-600 font-medium">{step.timeline}</span>
-                        </div>
+                        <h3 className="font-bold text-gray-900 mb-2">{step.title}</h3>
                         <p className="text-gray-600 text-sm">{step.description}</p>
                       </div>
                     </div>

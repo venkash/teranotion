@@ -48,26 +48,22 @@ const AIFoundation = () => {
     {
       step: '1',
       title: 'AI Readiness Assessment',
-      description: 'Evaluate current AI maturity and identify high-impact use cases for implementation',
-      timeline: '2-3 weeks'
+      description: 'Evaluate current AI maturity and identify high-impact use cases for implementation'
     },
     {
       step: '2',
       title: 'AI Platform Setup',
-      description: 'Deploy SAP AI Core and establish MLOps governance and security frameworks',
-      timeline: '4-6 weeks'
+      description: 'Deploy SAP AI Core and establish MLOps governance and security frameworks'
     },
     {
       step: '3',
       title: 'Model Development & Training',
-      description: 'Build and train custom AI models or configure pre-trained business services',
-      timeline: '6-12 weeks'
+      description: 'Build and train custom AI models or configure pre-trained business services'
     },
     {
       step: '4',
       title: 'Deployment & Optimization',
-      description: 'Deploy AI agents and establish continuous learning and optimization processes',
-      timeline: '4-6 weeks'
+      description: 'Deploy AI agents and establish continuous learning and optimization processes'
     }
   ];
 
@@ -234,10 +230,7 @@ const AIFoundation = () => {
                         {step.step}
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="font-bold text-gray-900">{step.title}</h3>
-                          <span className="text-sm text-blue-600 font-medium">{step.timeline}</span>
-                        </div>
+                        <h3 className="font-bold text-gray-900 mb-2">{step.title}</h3>
                         <p className="text-gray-600 text-sm">{step.description}</p>
                       </div>
                     </div>

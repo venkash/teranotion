@@ -98,12 +98,12 @@ const Hero = () => {
                   <div className="text-sm text-gray-600">Years SAP Expertise</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-700 mb-1">500+</div>
-                  <div className="text-sm text-gray-600">Projects Delivered</div>
+                  <div className="text-3xl font-bold text-blue-700 mb-1">BTP</div>
+                  <div className="text-sm text-gray-600">Platform Certified</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-700 mb-1">99%</div>
-                  <div className="text-sm text-gray-600">Client Success Rate</div>
+                  <div className="text-3xl font-bold text-blue-700 mb-1">AI</div>
+                  <div className="text-sm text-gray-600">Ready Solutions</div>
                 </div>
               </div>
             </div>

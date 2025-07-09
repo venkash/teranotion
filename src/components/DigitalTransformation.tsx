@@ -48,26 +48,22 @@ const DigitalTransformation = () => {
     {
       step: '1',
       title: 'Digital Readiness Assessment',
-      description: 'Evaluate current systems, processes, and identify transformation opportunities',
-      timeline: '2-3 weeks'
+      description: 'Evaluate current systems, processes, and identify transformation opportunities'
     },
     {
       step: '2',
       title: 'Platform Implementation',
-      description: 'Deploy SAP Build Platform and establish development governance framework',
-      timeline: '4-6 weeks'
+      description: 'Deploy SAP Build Platform and establish development governance framework'
     },
     {
       step: '3',
       title: 'Integration & Automation',
-      description: 'Connect systems and automate key business processes with intelligent workflows',
-      timeline: '6-10 weeks'
+      description: 'Connect systems and automate key business processes with intelligent workflows'
     },
     {
       step: '4',
       title: 'User Training & Adoption',
-      description: 'Enable citizen developers and ensure successful platform adoption',
-      timeline: '3-4 weeks'
+      description: 'Enable citizen developers and ensure successful platform adoption'
     }
   ];
 
@@ -234,10 +230,7 @@ const DigitalTransformation = () => {
                         {step.step}
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="font-bold text-gray-900">{step.title}</h3>
-                          <span className="text-sm text-blue-600 font-medium">{step.timeline}</span>
-                        </div>
+                        <h3 className="font-bold text-gray-900 mb-2">{step.title}</h3>
                         <p className="text-gray-600 text-sm">{step.description}</p>
                       </div>
                     </div>
