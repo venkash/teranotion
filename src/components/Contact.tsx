@@ -1,124 +1,278 @@
-import React from 'react';
-import { Award, Users, Globe, CheckCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
 
-const About = () => {
-  const achievements = [
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    service: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    try {
+      // Submit to Netlify Forms
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          ...formData,
+          'timestamp': new Date().toISOString()
+        }).toString()
+      });
+
+      if (response.ok) {
+        alert('Thank you for your message! We\'ll get back to you soon.');
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      alert('Something went wrong. Please try again or contact us directly.');
+      console.error('Contact form error:', error);
+    }
+  };
+
+  const contactInfo = [
     {
-      icon: Users,
-      title: 'Expert SAP Consultants',
-      description: 'Team of specialized SAP professionals',
-      color: 'from-blue-600 to-blue-700'
+      icon: Mail,
+      title: 'Email',
+      value: 'contact@teranotion.com',
+      link: 'mailto:contact@teranotion.com'
     },
     {
-      icon: Globe,
-      title: 'Global Reach',
-      description: 'Serving clients worldwide',
-      color: 'from-blue-600 to-blue-700'
+      icon: Phone,
+      title: 'Phone',
+      value: '(346) 634-6646',
+      link: 'tel:+13466346646'
     },
     {
-      icon: Award,
-      title: 'SAP Certified Excellence',
-      description: 'Certified across SAP Business Technology Platform',
-      color: 'from-blue-600 to-blue-700'
+      icon: MapPin,
+      title: 'Address',
+      value: '19247 Goodnight Peak Trl, Cypress, TX 77433',
+      link: '#'
     }
   ];
 
-  const expertise = [
+  const services = [
     'SAP Business Data Cloud',
     'AI Agents & Automation',
     'SAP Analytics Cloud',
     'SAP AI Core & Foundation',
     'SAP Datasphere',
     'SAP Build Platform',
-    'Cloud-Native Architecture',
+    'Cloud Architecture',
     'Intelligent Process Automation'
   ];
 
   return (
-    <section id="about" className="py-16 bg-gradient-to-br from-slate-800 via-gray-800 to-slate-900 text-white">
+    <section id="contact" className="py-20 bg-gradient-to-br from-white via-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Content */}
-          <div>
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Your Trusted SAP Cloud & AI Partner
-            </h2>
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              With 18+ years of SAP expertise, we're at the forefront of cloud and AI innovation. 
-              We help organizations harness intelligent automation and cloud-native analytics to 
-              drive measurable business transformation across the entire SAP ecosystem.
-            </p>
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Let's Transform Your Business Together
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Ready to unlock the power of SAP cloud and AI? Let's discuss how our proven 
+            solutions can accelerate your digital transformation and drive measurable results.
+          </p>
+        </div>
 
-            {/* Achievements */}
+        <div className="grid lg:grid-cols-2 gap-16">
+          {/* Contact Form */}
+          <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              Start Your Transformation Journey
+            </h3>
+            
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Hidden fields for Netlify */}
+              <input type="hidden" name="form-name" value="contact" />
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                    Company
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+                  Solution Interest
+                </label>
+                <select
+                  id="service"
+                  name="service"
+                  value={formData.service}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                >
+                  <option value="">Select a service...</option>
+                  {services.map((service) => (
+                    <option key={service} value={service}>
+                      {service}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  rows={5}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  placeholder="Tell us about your project requirements..."
+                  required
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-gray-700 to-gray-800 text-white py-4 px-6 rounded-lg hover:from-gray-800 hover:to-gray-900 transition-all duration-200 font-medium flex items-center justify-center shadow-lg hover:shadow-xl"
+              >
+                Send Message
+                <Send className="ml-2 h-5 w-5" />
+              </button>
+            </form>
+          </div>
+
+          {/* Contact Information */}
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">
+              Connect With Our SAP Experts
+            </h3>
+
             <div className="space-y-6 mb-8">
-              {achievements.map((achievement, index) => (
+              {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-start space-x-4 group">
-                  <div className={`bg-gradient-to-r from-emerald-600 to-teal-600 p-3 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300`}>
-                    <achievement.icon className="h-6 w-6 text-white" />
+                  <div className="bg-gradient-to-r from-teal-600 to-teal-700 p-3 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <info.icon className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white mb-1">
-                      {achievement.title}
-                    </h3>
-                    <p className="text-gray-300">
-                      {achievement.description}
-                    </p>
+                    <h4 className="font-semibold text-gray-900 mb-1">
+                      {info.title}
+                    </h4>
+                    <a
+                      href={info.link}
+                      className="text-gray-600 hover:text-teal-700 transition-colors duration-200"
+                    >
+                      {info.value}
+                    </a>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Expertise Grid */}
-            <div>
-              <h3 className="text-xl font-bold text-white mb-4">
-                Core Expertise Areas
-              </h3>
-              <div className="grid grid-cols-2 gap-3">
-                {expertise.map((skill, index) => (
-                  <div key={index} className="flex items-center space-x-2">
-                    <CheckCircle className="h-5 w-5 text-emerald-400" />
-                    <span className="text-gray-300">{skill}</span>
-                  </div>
-                ))}
+            {/* Business Hours */}
+            <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6 mb-8 border border-gray-200">
+              <div className="flex items-center space-x-3 mb-4">
+                <Clock className="h-6 w-6 text-gray-600" />
+                <h4 className="font-semibold text-gray-900">Business Hours</h4>
               </div>
-            </div>
-          </div>
-
-          {/* Right Column - Visual */}
-          <div className="relative">
-            <div className="bg-slate-700 rounded-2xl shadow-2xl p-8 backdrop-blur-sm border border-slate-600">
-              <img
-                src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Our Team"
-                className="w-full h-64 object-cover rounded-lg mb-6"
-              />
-              
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-emerald-400 mb-2">18+</div>
-                  <div className="text-sm text-gray-300">Years Experience</div>
+              <div className="space-y-2 text-gray-600">
+                <div className="flex justify-between">
+                  <span>Monday - Friday</span>
+                  <span>9:00 AM - 6:00 PM</span>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-indigo-400 mb-2">BTP</div>
-                  <div className="text-sm text-gray-300">Platform Certified</div>
+                <div className="flex justify-between">
+                  <span>Saturday</span>
+                  <span>10:00 AM - 2:00 PM</span>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-indigo-400 mb-2">Cloud</div>
-                  <div className="text-sm text-gray-300">Native Solutions</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-indigo-400 mb-2">24/7</div>
-                  <div className="text-sm text-gray-300">Support</div>
+                <div className="flex justify-between">
+                  <span>Sunday</span>
+                  <span>Closed</span>
                 </div>
               </div>
             </div>
 
-            {/* Certifications */}
-            <div className="mt-8 bg-gradient-to-r from-indigo-700 to-purple-700 rounded-xl p-6 text-white shadow-xl">
-              <h3 className="text-xl font-bold mb-2">SAP Certified & AI Specialist</h3>
-              <p className="opacity-90">
-                Certified across the complete SAP Business Technology Platform ecosystem
+            {/* Response Time */}
+            <div className="bg-gradient-to-r from-teal-50 to-teal-100 rounded-xl p-6 border border-teal-200">
+              <h4 className="font-semibold text-teal-800 mb-2">
+                Free SAP Assessment Available
+              </h4>
+              <p className="text-teal-700">
+                Get a complimentary assessment of your current SAP landscape and 
+                discover transformation opportunities.
               </p>
             </div>
           </div>
@@ -128,4 +282,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Contact;

@@ -1,131 +1,113 @@
-import React from 'react';
-import { Award, Users, Globe, CheckCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import Logo from './Logo';
 
-const About = () => {
-  const achievements = [
-    {
-      icon: Users,
-      title: 'Expert SAP Consultants',
-      description: 'Team of specialized SAP professionals',
-      color: 'from-blue-600 to-blue-700'
-    },
-    {
-      icon: Globe,
-      title: 'Global Reach',
-      description: 'Serving clients worldwide',
-      color: 'from-blue-600 to-blue-700'
-    },
-    {
-      icon: Award,
-      title: 'SAP Certified Excellence',
-      description: 'Certified across SAP Business Technology Platform',
-      color: 'from-blue-600 to-blue-700'
-    }
-  ];
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const expertise = [
-    'SAP Business Data Cloud',
-    'AI Agents & Automation',
-    'SAP Analytics Cloud',
-    'SAP AI Core & Foundation',
-    'SAP Datasphere',
-    'SAP Build Platform',
-    'Cloud-Native Architecture',
-    'Intelligent Process Automation'
+  const navItems = [
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Resources', href: '/resources' },
+    { name: 'About', href: '/#about' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   return (
-    <section id="about" className="py-16 bg-gradient-to-br from-slate-800 via-gray-800 to-slate-900 text-white">
+    <header className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Content */}
-          <div>
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Your Trusted SAP Cloud & AI Partner
-            </h2>
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              With 18+ years of SAP expertise, we're at the forefront of cloud and AI innovation. 
-              We help organizations harness intelligent automation and cloud-native analytics to 
-              drive measurable business transformation across the entire SAP ecosystem.
-            </p>
+        <div className="flex justify-between items-center py-4">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-2">
+            <Logo className="h-8 w-8 text-gray-700" />
+            <span className="text-2xl font-bold text-gray-900">Teranotion</span>
+          </Link>
 
-            {/* Achievements */}
-            <div className="space-y-6 mb-8">
-              {achievements.map((achievement, index) => (
-                <div key={index} className="flex items-start space-x-4 group">
-                  <div className={`bg-gradient-to-r from-emerald-600 to-teal-600 p-3 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300`}>
-                    <achievement.icon className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">
-                      {achievement.title}
-                    </h3>
-                    <p className="text-gray-300">
-                      {achievement.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-8">
+            {navItems.map((item) => (
+              item.href.startsWith('/#') ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-700 hover:text-gray-700 px-3 py-2 transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="text-gray-700 hover:text-gray-700 px-3 py-2 transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </Link>
+              )
+            ))}
+          </nav>
 
-            {/* Expertise Grid */}
-            <div>
-              <h3 className="text-xl font-bold text-white mb-4">
-                Core Expertise Areas
-              </h3>
-              <div className="grid grid-cols-2 gap-3">
-                {expertise.map((skill, index) => (
-                  <div key={index} className="flex items-center space-x-2">
-                    <CheckCircle className="h-5 w-5 text-emerald-400" />
-                    <span className="text-gray-300">{skill}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+          {/* CTA Button */}
+          <div className="hidden md:flex">
+            <a
+              href="/#contact"
+              className="bg-gray-700 text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium"
+            >
+              Get Started
+            </a>
           </div>
 
-          {/* Right Column - Visual */}
-          <div className="relative">
-            <div className="bg-slate-700 rounded-2xl shadow-2xl p-8 backdrop-blur-sm border border-slate-600">
-              <img
-                src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Our Team"
-                className="w-full h-64 object-cover rounded-lg mb-6"
-              />
-              
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-emerald-400 mb-2">18+</div>
-                  <div className="text-sm text-gray-300">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-indigo-400 mb-2">BTP</div>
-                  <div className="text-sm text-gray-300">Platform Certified</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-indigo-400 mb-2">Cloud</div>
-                  <div className="text-sm text-gray-300">Native Solutions</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-indigo-400 mb-2">24/7</div>
-                  <div className="text-sm text-gray-300">Support</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Certifications */}
-            <div className="mt-8 bg-gradient-to-r from-indigo-700 to-purple-700 rounded-xl p-6 text-white shadow-xl">
-              <h3 className="text-xl font-bold mb-2">SAP Certified & AI Specialist</h3>
-              <p className="opacity-90">
-                Certified across the complete SAP Business Technology Platform ecosystem
-              </p>
-            </div>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? (
+              <X className="h-6 w-6 text-gray-700" />
+            ) : (
+              <Menu className="h-6 w-6 text-gray-700" />
+            )}
+          </button>
         </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden pb-4">
+            <nav className="flex flex-col space-y-2">
+              {navItems.map((item) => (
+                item.href.startsWith('/#') ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-gray-700 hover:text-gray-700 px-3 py-2 transition-colors duration-200 font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="text-gray-700 hover:text-gray-700 px-3 py-2 transition-colors duration-200 font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              ))}
+              <a
+                href="/#contact"
+                className="bg-gray-700 text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium text-center mt-4"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Get Started
+              </a>
+            </nav>
+          </div>
+        )}
       </div>
-    </section>
+    </header>
   );
 };
 
-export default About;
+export default Header;
