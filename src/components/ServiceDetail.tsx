@@ -350,8 +350,8 @@ const ServiceDetail = () => {
                   <div className="text-sm text-gray-600">Grade Solution</div>
                 </div>
                 <div className="bg-white rounded-lg p-4 shadow-sm">
-                  <div className="text-2xl font-bold text-blue-600 mb-1">24/7</div>
-                  <div className="text-sm text-gray-600">Support Available</div>
+                  <div className="text-2xl font-bold text-blue-600 mb-1">Proven</div>
+                  <div className="text-sm text-gray-600">ROI Results</div>
                 </div>
               </div>
             </div>
