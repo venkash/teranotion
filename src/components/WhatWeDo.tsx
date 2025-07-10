@@ -5,7 +5,7 @@ import { TrendingUp, Database, Brain, Workflow, CheckCircle, ArrowRight } from '
 const WhatWeDo = () => {
   const transformationAreas = [
     {
-      id: 'data-analytics-modernization',
+      id: '/transformation/data-analytics-modernization',
       icon: Database,
       title: 'Data & Analytics Modernization',
       description: 'Transform your data landscape with cloud-native analytics and real-time insights using SAP Business Data Cloud and SAP Analytics Cloud.',
@@ -20,7 +20,7 @@ const WhatWeDo = () => {
       gradient: 'from-teal-600 to-teal-700'
     },
     {
-      id: 'digital-transformation',
+      id: '/transformation/digital-transformation',
       icon: Workflow,
       title: 'End-to-End Digital Transformation',
       description: 'Accelerate your digital journey with low-code platforms and seamless integration across your entire business ecosystem.',
@@ -35,7 +35,7 @@ const WhatWeDo = () => {
       gradient: 'from-teal-500 to-teal-600'
     },
     {
-      id: 'ai-foundation',
+      id: '/transformation/ai-foundation',
       icon: Brain,
       title: 'AI Foundation & Enterprise Readiness',
       description: 'Build a robust AI foundation with SAP AI Core and Joule Framework to make your enterprise truly AI-ready for the future.',
@@ -92,7 +92,7 @@ const WhatWeDo = () => {
           {transformationAreas.map((area, index) => (
             <Link
               key={area.id}
-              to={`/transformation/${area.id}`}
+              to={area.id}
               className="block"
             >
               <div

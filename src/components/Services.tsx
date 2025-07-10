@@ -50,36 +50,6 @@ const Services = () => {
       borderColor: 'border-purple-200'
     },
     {
-      id: 'sap-ai-core-foundation',
-      icon: Cloud,
-      title: 'SAP AI Core & Foundation',
-      description: 'Enterprise AI platform for building, training, and deploying machine learning models at scale.',
-      features: [
-        'MLOps platform for AI lifecycle',
-        'Pre-trained business AI models',
-        'Custom model development',
-        'Enterprise-grade AI governance'
-      ],
-      color: 'from-indigo-600 to-indigo-700',
-      bgColor: 'bg-indigo-50',
-      borderColor: 'border-indigo-200'
-    },
-    {
-      id: 'sap-datasphere',
-      icon: Database,
-      title: 'SAP Datasphere',
-      description: 'Comprehensive data management with data warehousing, data lakes, and data virtualization.',
-      features: [
-        'Data warehouse modernization',
-        'Data lake implementation',
-        'Data virtualization layer',
-        'Multi-cloud data integration'
-      ],
-      color: 'from-green-600 to-green-700',
-      bgColor: 'bg-green-50',
-      borderColor: 'border-green-200'
-    },
-    {
       id: 'sap-build-integration',
       icon: Workflow,
       title: 'SAP Build & Integration',

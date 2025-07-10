@@ -11,8 +11,6 @@ const Footer = () => {
       { name: 'SAP Business Data Cloud', href: '/services/sap-business-data-cloud' },
       { name: 'AI Agents & Automation', href: '/services/ai-agents-automation' },
       { name: 'SAP Analytics Cloud', href: '/services/sap-analytics-cloud' },
-      { name: 'SAP AI Core & Foundation', href: '/services/sap-ai-core-foundation' },
-      { name: 'SAP Datasphere', href: '/services/sap-datasphere' },
       { name: 'SAP Build & Integration', href: '/services/sap-build-integration' }
     ],
     company: [
