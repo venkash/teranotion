@@ -17,17 +17,8 @@ const Header = () => {
 
   const handleNavClick = (item: any) => {
     if (item.type === 'anchor') {
-      if (window.location.pathname === '/') {
-        // If we're on home page, scroll to section
-        const elementId = item.href.substring(2); // Remove /#
-        const element = document.getElementById(elementId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      } else {
-        // Navigate to home page with hash
-        window.location.href = item.href;
-      }
+      // Always navigate to home page with hash for anchor links
+      window.location.href = item.href;
     }
     setIsMenuOpen(false);
   };
