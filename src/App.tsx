@@ -164,6 +164,11 @@ const WhatWeDo = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   if (window.location.pathname !== '/') {
+                    window.location.href = '/#contact';
+                  } else {
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="bg-white text-gray-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center justify-center shadow-lg hover:shadow-xl"
               >
                 <TrendingUp className="mr-2 h-5 w-5" />
