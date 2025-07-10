@@ -97,6 +97,8 @@ const About = () => {
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-emerald-400 mb-2">18+</div>
+                  <div className="text-sm text-gray-300">Years Experience</div>
+                </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-indigo-400 mb-2">BTP</div>
                   <div className="text-sm text-gray-300">Platform Certified</div>
@@ -121,6 +123,7 @@ const About = () => {
             </div>
           </div>
         </div>
+      </div>
     </section>
   );
 };
