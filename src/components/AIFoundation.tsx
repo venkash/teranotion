@@ -109,7 +109,7 @@ const AIFoundation = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Button */}
           <Link 
-            to="/#what-we-do" 
+            to="/#what-we-do"
             className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8 transition-colors duration-200"
           >
             <ArrowLeft className="h-5 w-5 mr-2" />

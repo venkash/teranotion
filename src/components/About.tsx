@@ -97,6 +97,7 @@ const About = () => {
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-emerald-400 mb-2">18+</div>
+                  <div className="text-sm text-gray-300">Years Experience</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-indigo-400 mb-2">BTP</div>
@@ -107,8 +108,8 @@ const About = () => {
                   <div className="text-sm text-gray-300">Native Solutions</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-indigo-400 mb-2">24/7</div>
-                  <div className="text-sm text-gray-300">Support</div>
+                  <div className="text-3xl font-bold text-indigo-400 mb-2">500+</div>
+                  <div className="text-sm text-gray-300">Projects Delivered</div>
                 </div>
               </div>
             </div>

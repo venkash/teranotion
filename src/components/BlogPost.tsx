@@ -124,11 +124,37 @@ const BlogPost = () => {
         <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
           {/* Article Content */}
           <div className="prose prose-lg max-w-none">
-            <div 
-              dangerouslySetInnerHTML={{ 
-                __html: post.content.replace(/\n/g, '<br />').replace(/# /g, '<h1>').replace(/<h1>/g, '<h1 class="text-3xl font-bold text-gray-900 mb-6 mt-8">').replace(/## /g, '<h2>').replace(/<h2>/g, '<h2 class="text-2xl font-bold text-gray-900 mb-4 mt-6">').replace(/### /g, '<h3>').replace(/<h3>/g, '<h3 class="text-xl font-bold text-gray-900 mb-3 mt-4">')
-              }} 
-            />
+            <div className="prose-content">
+              {post.content.split('\n\n').map((paragraph, index) => {
+                if (paragraph.startsWith('# ')) {
+                  return (
+                    <h1 key={index} className="text-3xl font-bold text-gray-900 mb-6 mt-8 first:mt-0">
+                      {paragraph.replace('# ', '')}
+                    </h1>
+                  );
+                } else if (paragraph.startsWith('## ')) {
+                  return (
+                    <h2 key={index} className="text-2xl font-bold text-gray-900 mb-4 mt-6">
+                      {paragraph.replace('## ', '')}
+                    </h2>
+                  );
+                } else if (paragraph.startsWith('### ')) {
+                  return (
+                    <h3 key={index} className="text-xl font-bold text-gray-900 mb-3 mt-4">
+                      {paragraph.replace('### ', '')}
+                    </h3>
+                  );
+                } else if (paragraph.trim() === '') {
+                  return null;
+                } else {
+                  return (
+                    <p key={index} className="text-gray-700 leading-relaxed mb-4">
+                      {paragraph}
+                    </p>
+                  );
+                }
+              })}
+            </div>
           </div>
 
           {/* Tags */}
@@ -193,7 +219,11 @@ const BlogPost = () => {
             Let's discuss how our SAP cloud and AI solutions can help you achieve your goals.
           </p>
           <Link
-            to="/#contact"
+            to="/"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = '/#contact';
+            }}
             className="bg-white text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-block shadow-lg hover:shadow-xl"
           >
             Get Started Today
