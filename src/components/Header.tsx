@@ -17,18 +17,8 @@ const Header = () => {
 
   const handleNavClick = (item: any) => {
     if (item.type === 'anchor') {
-      // Check if we're on the home page
-      if (window.location.pathname === '/') {
-        // We're on home page, scroll to section
-        const sectionId = item.href.replace('/#', '');
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      } else {
-        // We're on a different page, navigate to home with hash
-        window.location.href = item.href;
-      }
+      // Always navigate to home page with hash for anchor links
+      window.location.href = item.href;
     }
     setIsMenuOpen(false);
   };
