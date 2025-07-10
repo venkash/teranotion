@@ -7,13 +7,30 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'What We Do', href: '/#what-we-do' },
-    { name: 'Services', href: '/#services' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'About', href: '/#about' },
-    { name: 'Contact', href: '/#contact' },
+    { name: 'Home', href: '/', type: 'route' },
+    { name: 'What We Do', href: '/#what-we-do', type: 'anchor' },
+    { name: 'Services', href: '/#services', type: 'anchor' },
+    { name: 'Resources', href: '/resources', type: 'route' },
+    { name: 'About', href: '/#about', type: 'anchor' },
+    { name: 'Contact', href: '/#contact', type: 'anchor' },
   ];
+
+  const handleNavClick = (item: any) => {
+    if (item.type === 'anchor') {
+      // If we're not on the home page, navigate to home first
+      if (window.location.pathname !== '/') {
+        window.location.href = item.href;
+      } else {
+        // If we're on home page, scroll to section
+        const elementId = item.href.substring(2); // Remove /#
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">

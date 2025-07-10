@@ -19,9 +19,18 @@ import ContentManagement from './components/ContentManagement';
 function App() {
   const location = useLocation();
 
-  // Scroll to top when route changes
+  // Handle navigation and scrolling
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // If it's a hash link (anchor), scroll to that element
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Otherwise scroll to top
+      window.scrollTo(0, 0);
+    }
   }, [location.pathname]);
 
   return (
