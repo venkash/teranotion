@@ -140,7 +140,19 @@ const Footer = () => {
                   Get the latest SAP insights and transformation strategies.
                 </p>
                 <a
-                  href="#newsletter"
+                  href="/#newsletter"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (window.location.pathname !== '/') {
+                      window.location.href = '/#newsletter';
+                    } else {
+                      const element = document.querySelector('section:has([name="newsletter"])') || 
+                                   document.querySelector('[id*="newsletter"]');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }
+                  }}
                   className="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors duration-200 text-sm font-medium inline-block"
                 >
                   Subscribe Now

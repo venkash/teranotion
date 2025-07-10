@@ -130,6 +130,17 @@ const Newsletter = () => {
           <div className="mt-8 pt-8 border-t border-white border-opacity-20">
             <a
               href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                if (window.location.pathname !== '/') {
+                  window.location.href = '/#contact';
+                } else {
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }
+              }}
               className="inline-flex items-center border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-gray-700 transition-colors duration-200 font-medium"
             >
               Let's Talk

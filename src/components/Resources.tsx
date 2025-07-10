@@ -326,7 +326,11 @@ const Resources = () => {
               Our experts are ready to help you implement the perfect SAP cloud and AI strategy for your business.
             </p>
             <Link
-              to="/#contact"
+              to="/"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/#contact';
+              }}
               className="bg-white text-gray-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-flex items-center shadow-lg hover:shadow-xl"
             >
               Get Expert Consultation

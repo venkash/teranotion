@@ -219,7 +219,11 @@ const BlogPost = () => {
             Let's discuss how our SAP cloud and AI solutions can help you achieve your goals.
           </p>
           <Link
-            to="/#contact"
+            to="/"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = '/#contact';
+            }}
             className="bg-white text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium inline-block shadow-lg hover:shadow-xl"
           >
             Get Started Today

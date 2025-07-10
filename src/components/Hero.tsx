@@ -78,6 +78,13 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <a
                   href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById('contact');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                   className="bg-gray-700 text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-all duration-200 font-medium flex items-center justify-center group shadow-lg hover:shadow-xl"
                 >
                   Start Your Transformation
@@ -85,6 +92,13 @@ const Hero = () => {
                 </a>
                 <a
                   href="#what-we-do"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById('what-we-do');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                   className="border-2 border-gray-700 text-gray-700 px-8 py-4 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-200 font-medium text-center"
                 >
                   Explore Solutions
@@ -182,6 +196,13 @@ const Hero = () => {
               <div className="mt-8 pt-6 border-t border-gray-200 text-center">
                 <a
                   href="#services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById('services');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                   className="inline-flex items-center text-teal-600 hover:text-teal-700 font-medium transition-colors duration-200"
                 >
                   View All Solutions
