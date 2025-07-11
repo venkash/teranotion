@@ -24,15 +24,16 @@ exports.handler = async (event, context) => {
 
     // Configure your email service (example with Gmail)
     const transporter = nodemailer.createTransporter({
-      host: 'smtp-mail.outlook.com',
+      host: 'smtp.office365.com', // Microsoft Exchange/Office 365
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {
-        user: process.env.EMAIL_USER, // Your Outlook email
-        pass: process.env.EMAIL_PASS  // Your Outlook app password
+        user: process.env.EMAIL_USER, // vavasarala@teranotion.com
+        pass: process.env.EMAIL_PASS  // Your Microsoft app password
       },
       tls: {
-        ciphers: 'SSLv3'
+        ciphers: 'SSLv3',
+        rejectUnauthorized: false
       }
     });
 
