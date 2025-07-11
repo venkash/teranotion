@@ -13,18 +13,45 @@ const Newsletter = () => {
     setError('');
 
     try {
-      // Submit to our custom function for automated email
-      const response = await fetch('/.netlify/functions/newsletter-signup', {
+      // First try the custom function for automated emails
+      try {
+        const functionResponse = await fetch('/.netlify/functions/newsletter-signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({
+            'email': email,
+            'timestamp': new Date().toISOString(),
+            'source': 'website'
+          })
+        });
+
+        if (functionResponse.ok) {
+          setIsSubscribed(true);
+          setEmail('');
+          
+          // Reset success message after 5 seconds
+          setTimeout(() => {
+            setIsSubscribed(false);
+          }, 5000);
+          return;
+        }
+      } catch (functionError) {
+        console.log('Function failed, falling back to Netlify Forms');
+      }
+
+      // Fallback to Netlify Forms if function fails
+      const formResponse = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
+          'form-name': 'newsletter',
           'email': email,
           'timestamp': new Date().toISOString(),
           'source': 'website'
-        })
+        }).toString()
       });
 
-      if (response.ok) {
+      if (formResponse.ok) {
         setIsSubscribed(true);
         setEmail('');
         
@@ -33,10 +60,10 @@ const Newsletter = () => {
           setIsSubscribed(false);
         }, 5000);
       } else {
-        throw new Error('Subscription failed');
+        throw new Error('Both subscription methods failed');
       }
     } catch (err) {
-      setError('Something went wrong. Please try again.');
+      setError('Something went wrong. Please try again or contact us directly.');
       console.error('Newsletter subscription error:', err);
     } finally {
       setIsLoading(false);
