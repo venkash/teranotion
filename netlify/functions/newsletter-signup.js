@@ -24,10 +24,15 @@ exports.handler = async (event, context) => {
 
     // Configure your email service (example with Gmail)
     const transporter = nodemailer.createTransporter({
-      service: 'gmail',
+      host: 'smtp-mail.outlook.com',
+      port: 587,
+      secure: false, // true for 465, false for other ports
       auth: {
-        user: process.env.EMAIL_USER, // Your email
-        pass: process.env.EMAIL_PASS  // Your app password
+        user: process.env.EMAIL_USER, // Your Outlook email
+        pass: process.env.EMAIL_PASS  // Your Outlook app password
+      },
+      tls: {
+        ciphers: 'SSLv3'
       }
     });
 
