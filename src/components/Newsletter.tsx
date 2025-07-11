@@ -41,12 +41,6 @@ const Newsletter = () => {
     } finally {
       setIsLoading(false);
     }
-    } catch (err) {
-      setError('Something went wrong. Please try again.');
-      console.error('Newsletter subscription error:', err);
-    } finally {
-      setIsLoading(false);
-    }
   };
 
   return (
