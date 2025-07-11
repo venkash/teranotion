@@ -18,6 +18,10 @@ const ServiceDetail = () => {
       subtitle: 'Unified Data Fabric & Real-Time Analytics',
       description: 'Transform your data landscape with cloud-native analytics and real-time insights using SAP Business Data Cloud. Create a unified data fabric that connects all your business data sources.',
       image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
+      quickStats: [
+        { value: 'Real-Time', label: 'Data Processing' },
+        { value: '80%', label: 'Faster Insights' }
+      ],
       keyCapabilities: [
         'Real-time data streaming and processing',
         'Unified data fabric architecture',
@@ -59,6 +63,10 @@ const ServiceDetail = () => {
       subtitle: 'Intelligent Process Automation with SAP Joule',
       description: 'Implement intelligent automation with SAP Joule framework for autonomous business processes. Deploy AI agents that learn, adapt, and make decisions independently.',
       image: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800',
+      quickStats: [
+        { value: '24/7', label: 'Autonomous Operation' },
+        { value: '90%', label: 'Process Automation' }
+      ],
       keyCapabilities: [
         'Intelligent process automation',
         'Conversational AI interfaces',
@@ -100,6 +108,10 @@ const ServiceDetail = () => {
       subtitle: 'Self-Service Analytics & Predictive Insights',
       description: 'Democratize analytics with SAP Analytics Cloud. Enable self-service business intelligence with embedded AI for predictive insights and collaborative planning.',
       image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=800',
+      quickStats: [
+        { value: 'Self-Service', label: 'Analytics Platform' },
+        { value: '60%', label: 'Faster Decisions' }
+      ],
       keyCapabilities: [
         'Self-service business intelligence',
         'Predictive analytics and forecasting',
@@ -141,6 +153,10 @@ const ServiceDetail = () => {
       subtitle: 'Enterprise AI Platform & MLOps',
       description: 'Build a robust AI foundation with SAP AI Core. Implement enterprise-grade machine learning operations for scalable AI deployment and management.',
       image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
+      quickStats: [
+        { value: 'MLOps', label: 'Enterprise Platform' },
+        { value: '10x', label: 'Faster Deployment' }
+      ],
       keyCapabilities: [
         'MLOps platform for AI lifecycle management',
         'Pre-trained business AI models',
@@ -182,6 +198,10 @@ const ServiceDetail = () => {
       subtitle: 'Data Fabric & Enterprise Data Management',
       description: 'Modernize your data architecture with SAP Datasphere. Implement comprehensive data management with data warehousing, data lakes, and virtualization.',
       image: 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=800',
+      quickStats: [
+        { value: 'Unified', label: 'Data Fabric' },
+        { value: '90%', label: 'Reduced Silos' }
+      ],
       keyCapabilities: [
         'Data warehouse modernization',
         'Data lake implementation',
@@ -223,6 +243,10 @@ const ServiceDetail = () => {
       subtitle: 'Low-Code Platform & System Integration',
       description: 'Accelerate development with SAP Build platform. Enable rapid application development and seamless system integration with low-code tools.',
       image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
+      quickStats: [
+        { value: 'Low-Code', label: 'Development Platform' },
+        { value: '5x', label: 'Faster Development' }
+      ],
       keyCapabilities: [
         'Visual application development',
         'API management and integration',
@@ -346,12 +370,12 @@ const ServiceDetail = () => {
               {/* Quick Stats */}
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-white rounded-lg p-4 shadow-sm">
-                  <div className="text-2xl font-bold text-blue-600 mb-1">Enterprise</div>
-                  <div className="text-sm text-gray-600">Grade Solution</div>
+                  <div className="text-2xl font-bold text-blue-600 mb-1">{service.quickStats[0].value}</div>
+                  <div className="text-sm text-gray-600">{service.quickStats[0].label}</div>
                 </div>
                 <div className="bg-white rounded-lg p-4 shadow-sm">
-                  <div className="text-2xl font-bold text-blue-600 mb-1">Proven</div>
-                  <div className="text-sm text-gray-600">ROI Results</div>
+                  <div className="text-2xl font-bold text-blue-600 mb-1">{service.quickStats[1].value}</div>
+                  <div className="text-sm text-gray-600">{service.quickStats[1].label}</div>
                 </div>
               </div>
             </div>

@@ -69,7 +69,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Address',
-      value: '19247 Goodnight Peak Trl, Cypress, TX 77433',
+      value: '8102 Fry Rd, Ste A, Cypress, TX 77433',
       link: '#'
     }
   ];
