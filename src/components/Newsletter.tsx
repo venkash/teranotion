@@ -13,34 +13,8 @@ const Newsletter = () => {
     setError('');
 
     try {
-      // First try the custom function for automated emails
-      try {
-        const functionResponse = await fetch('/.netlify/functions/newsletter-signup', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams({
-            'email': email,
-            'timestamp': new Date().toISOString(),
-            'source': 'website'
-          })
-        });
-
-        if (functionResponse.ok) {
-          setIsSubscribed(true);
-          setEmail('');
-          
-          // Reset success message after 5 seconds
-          setTimeout(() => {
-            setIsSubscribed(false);
-          }, 5000);
-          return;
-        }
-      } catch (functionError) {
-        console.log('Function failed, falling back to Netlify Forms');
-      }
-
-      // Fallback to Netlify Forms if function fails
-      const formResponse = await fetch('/', {
+      // Use Netlify Forms directly (most reliable method)
+      const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
@@ -51,7 +25,7 @@ const Newsletter = () => {
         }).toString()
       });
 
-      if (formResponse.ok) {
+      if (response.ok) {
         setIsSubscribed(true);
         setEmail('');
         
@@ -60,11 +34,13 @@ const Newsletter = () => {
           setIsSubscribed(false);
         }, 5000);
       } else {
-        throw new Error('Both subscription methods failed');
+        const errorText = await response.text();
+        console.error('Form submission failed:', response.status, errorText);
+        throw new Error(`Subscription failed: ${response.status}`);
       }
     } catch (err) {
-      setError('Something went wrong. Please try again or contact us directly.');
       console.error('Newsletter subscription error:', err);
+      setError('Unable to subscribe right now. Please try again or contact us at contact@teranotion.com');
     } finally {
       setIsLoading(false);
     }
