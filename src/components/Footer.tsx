@@ -67,7 +67,7 @@ const Footer = () => {
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 text-teal-400 mt-1" />
                   <span className="text-gray-300">
-                    19247 Goodnight Peak Trl<br />
+                    8102 Fry Rd, Ste A<br />
                     Cypress, TX 77433
                   </span>
                 </div>

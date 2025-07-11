@@ -100,6 +100,8 @@ const About = () => {
                   <div className="text-sm text-gray-300">Years Experience</div>
                 </div>
                 <div className="text-center">
+                </div>
+                <div className="text-center">
                   <div className="text-3xl font-bold text-indigo-400 mb-2">BTP</div>
                   <div className="text-sm text-gray-300">Platform Certified</div>
                 </div>

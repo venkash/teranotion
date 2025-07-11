@@ -32,19 +32,24 @@ const Resources = () => {
 
   // Filter content based on active tab, category, and search term
   const getFilteredContent = () => {
-    let content: any[] = [];
+    // Start with all content with type labels
+    let allContent = [
+      ...blogPosts.map(post => ({ ...post, type: 'blog' })),
+      ...newsletters.map(newsletter => ({ ...newsletter, type: 'newsletter' })),
+      ...externalLinks.map(link => ({ ...link, type: 'link' })),
+      ...videos.map(video => ({ ...video, type: 'video' }))
+    ];
 
-    if (activeTab === 'all' || activeTab === 'blog') {
-      content = [...content, ...blogPosts.map(post => ({ ...post, type: 'blog' }))];
-    }
-    if (activeTab === 'all' || activeTab === 'newsletters') {
-      content = [...content, ...newsletters.map(newsletter => ({ ...newsletter, type: 'newsletter' }))];
-    }
-    if (activeTab === 'all' || activeTab === 'links') {
-      content = [...content, ...externalLinks.map(link => ({ ...link, type: 'link' }))];
-    }
-    if (activeTab === 'all' || activeTab === 'videos') {
-      content = [...content, ...videos.map(video => ({ ...video, type: 'video' }))];
+    // Filter by tab first
+    let content = allContent;
+    if (activeTab !== 'all') {
+      content = allContent.filter(item => {
+        if (activeTab === 'blog') return item.type === 'blog';
+        if (activeTab === 'newsletters') return item.type === 'newsletter';
+        if (activeTab === 'links') return item.type === 'link';
+        if (activeTab === 'videos') return item.type === 'video';
+        return false;
+      });
     }
 
     // Filter by category
