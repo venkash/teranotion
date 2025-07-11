@@ -13,12 +13,11 @@ const Newsletter = () => {
     setError('');
 
     try {
-      // Submit to Netlify Forms (works automatically if deployed on Netlify)
-      const response = await fetch('/', {
+      // Submit to our custom function for automated email
+      const response = await fetch('/.netlify/functions/newsletter-signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
-          'form-name': 'newsletter',
           'email': email,
           'timestamp': new Date().toISOString(),
           'source': 'website'

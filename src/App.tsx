@@ -15,6 +15,7 @@ import DataAnalyticsModernization from './components/DataAnalyticsModernization'
 import DigitalTransformation from './components/DigitalTransformation';
 import AIFoundation from './components/AIFoundation';
 import ContentManagement from './components/ContentManagement';
+import ThankYou from './components/ThankYou';
 
 function App() {
   const location = useLocation();
@@ -57,6 +58,7 @@ function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/admin/content" element={<ContentManagement />} />
+        <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
       <Footer />
     </div>
