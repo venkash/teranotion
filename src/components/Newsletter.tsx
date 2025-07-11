@@ -92,15 +92,7 @@ const Newsletter = () => {
             <form 
               onSubmit={handleSubmit} 
               className="max-w-md mx-auto"
-              name="newsletter"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
             >
-              {/* Hidden fields for Netlify */}
-              <input type="hidden" name="form-name" value="newsletter" />
-              <input type="hidden" name="bot-field" />
-              
               <div className="flex flex-col sm:flex-row gap-4">
                 <input
                   type="email"
