@@ -42,13 +42,13 @@ const Resources = () => {
         ...videos.map(video => ({ ...video, type: 'video' }))
       ];
     } else if (activeTab === 'blog') {
-      content = [...content, ...blogPosts.map(post => ({ ...post, type: 'blog' }))];
+      content = blogPosts.map(post => ({ ...post, type: 'blog' }));
     } else if (activeTab === 'newsletters') {
-      content = [...content, ...newsletters.map(newsletter => ({ ...newsletter, type: 'newsletter' }))];
+      content = newsletters.map(newsletter => ({ ...newsletter, type: 'newsletter' }));
     } else if (activeTab === 'links') {
-      content = [...content, ...externalLinks.map(link => ({ ...link, type: 'link' }))];
+      content = externalLinks.map(link => ({ ...link, type: 'link' }));
     } else if (activeTab === 'videos') {
-      content = [...content, ...videos.map(video => ({ ...video, type: 'video' }))];
+      content = videos.map(video => ({ ...video, type: 'video' }));
     }
 
     // Filter by category
