@@ -19,8 +19,8 @@ const ServiceDetail = () => {
       description: 'Transform your data landscape with cloud-native analytics and real-time insights using SAP Business Data Cloud. Create a unified data fabric that connects all your business data sources.',
       image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
       quickStats: [
-        { value: 'Real-Time', label: 'Data Processing' },
-        { value: '80%', label: 'Faster Insights' }
+        { value: 'Real-Time', label: 'Analytics & Insights' },
+        { value: '360°', label: 'Business View' }
       ],
       keyCapabilities: [
         'Real-time data streaming and processing',

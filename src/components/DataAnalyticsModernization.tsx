@@ -139,12 +139,12 @@ const DataAnalyticsModernization = () => {
               {/* Quick Stats */}
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-white rounded-lg p-4 shadow-sm">
-                  <div className="text-2xl font-bold text-teal-600 mb-1">80%</div>
-                  <div className="text-sm text-gray-600">Faster Data Prep</div>
+                  <div className="text-2xl font-bold text-teal-600 mb-1">Real-Time</div>
+                  <div className="text-sm text-gray-600">Analytics & Insights</div>
                 </div>
                 <div className="bg-white rounded-lg p-4 shadow-sm">
-                  <div className="text-2xl font-bold text-teal-600 mb-1">95%</div>
-                  <div className="text-sm text-gray-600">Data Quality</div>
+                  <div className="text-2xl font-bold text-teal-600 mb-1">360°</div>
+                  <div className="text-sm text-gray-600">Business View</div>
                 </div>
               </div>
             </div>
