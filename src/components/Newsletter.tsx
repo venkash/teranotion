@@ -17,6 +17,7 @@ const Newsletter = () => {
       const response = await fetch('/.netlify/functions/newsletter-signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: JSON.stringify({
           'email': email,
           'timestamp': new Date().toISOString(),
           'source': 'website'
