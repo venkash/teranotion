@@ -34,16 +34,20 @@ const Resources = () => {
   const getFilteredContent = () => {
     let content: any[] = [];
 
-    if (activeTab === 'all' || activeTab === 'blog') {
+    if (activeTab === 'all') {
+      content = [
+        ...blogPosts.map(post => ({ ...post, type: 'blog' })),
+        ...newsletters.map(newsletter => ({ ...newsletter, type: 'newsletter' })),
+        ...externalLinks.map(link => ({ ...link, type: 'link' })),
+        ...videos.map(video => ({ ...video, type: 'video' }))
+      ];
+    } else if (activeTab === 'blog') {
       content = [...content, ...blogPosts.map(post => ({ ...post, type: 'blog' }))];
-    }
-    if (activeTab === 'all' || activeTab === 'newsletters') {
+    } else if (activeTab === 'newsletters') {
       content = [...content, ...newsletters.map(newsletter => ({ ...newsletter, type: 'newsletter' }))];
-    }
-    if (activeTab === 'all' || activeTab === 'links') {
+    } else if (activeTab === 'links') {
       content = [...content, ...externalLinks.map(link => ({ ...link, type: 'link' }))];
-    }
-    if (activeTab === 'all' || activeTab === 'videos') {
+    } else if (activeTab === 'videos') {
       content = [...content, ...videos.map(video => ({ ...video, type: 'video' }))];
     }
 
