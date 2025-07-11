@@ -17,11 +17,11 @@ const Newsletter = () => {
       const response = await fetch('/.netlify/functions/newsletter-signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: JSON.stringify({
+        body: new URLSearchParams({
           'email': email,
           'timestamp': new Date().toISOString(),
           'source': 'website'
-        }).toString()
+        })
       });
 
       if (response.ok) {
@@ -35,6 +35,12 @@ const Newsletter = () => {
       } else {
         throw new Error('Subscription failed');
       }
+    } catch (err) {
+      setError('Something went wrong. Please try again.');
+      console.error('Newsletter subscription error:', err);
+    } finally {
+      setIsLoading(false);
+    }
     } catch (err) {
       setError('Something went wrong. Please try again.');
       console.error('Newsletter subscription error:', err);
