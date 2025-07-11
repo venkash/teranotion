@@ -211,9 +211,6 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Floating elements */}
-            <div className="absolute -top-6 -right-6 w-12 h-12 bg-teal-400 rounded-full opacity-20 animate-bounce"></div>
-            <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-teal-400 rounded-full opacity-30 animate-bounce delay-500"></div>
           </div>
         </div>
       </div>
