@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-import { Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Send, CheckCircle } from 'lucide-react';
 
 const Newsletter = () => {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    setError('');
 
     try {
-      // Use Netlify Forms directly (most reliable method)
+      // Submit to Netlify Forms
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -28,19 +26,12 @@ const Newsletter = () => {
       if (response.ok) {
         setIsSubscribed(true);
         setEmail('');
-        
-        // Reset success message after 5 seconds
-        setTimeout(() => {
-          setIsSubscribed(false);
-        }, 5000);
       } else {
-        const errorText = await response.text();
-        console.error('Form submission failed:', response.status, errorText);
-        throw new Error(`Subscription failed: ${response.status}`);
+        throw new Error('Form submission failed');
       }
     } catch (err) {
-      console.error('Newsletter subscription error:', err);
-      setError('Unable to subscribe right now. Please try again or contact us at contact@teranotion.com');
+      alert('Something went wrong. Please try again or contact us directly.');
+      console.error('Newsletter subscription error:', error);
     } finally {
       setIsLoading(false);
     }
@@ -97,14 +88,6 @@ const Newsletter = () => {
                   )}
                 </button>
               </div>
-              
-              {error && (
-                <div className="flex items-center justify-center space-x-2 text-red-300 mt-4">
-                  <AlertCircle className="h-5 w-5" />
-                  <span>{error}</span>
-                </div>
-              )}
-              
               <p className="text-white opacity-75 text-sm mt-4">
                 No spam. Unsubscribe at any time. We respect your privacy.
               </p>
