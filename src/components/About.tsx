@@ -110,7 +110,7 @@ const About = () => {
                   <div className="text-sm text-gray-300">Native Solutions</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-indigo-400 mb-2">500+</div>
+                  <div className="text-3xl font-bold text-indigo-400 mb-2">100+</div>
                   <div className="text-sm text-gray-300">Projects Delivered</div>
                 </div>
               </div>
