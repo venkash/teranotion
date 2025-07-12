@@ -65,7 +65,7 @@ const Hero = () => {
             
             <div className="relative z-10">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
-                Transform Your Enterprise with
+                <span className="text-3xl md:text-4xl">Transform Your Enterprise with</span>
                 <span className="text-gray-700 block mt-2">SAP Cloud & AI Solutions</span>
               </h1>
               
